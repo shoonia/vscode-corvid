@@ -1,53 +1,54 @@
 {
-	"name": "corvid-vscode",
-	"displayName": "Corvid VSCode",
-	"description": "",
-	"version": "0.1.0",
-	"author": "alexanderz@wix.com",
-	"scripts": {
-		"test": "node ./test/runTest.js"
-	},
-	"activationEvents": [],
-	"main": "./extension.js",
-	"contributes": {
-		"commands": [],
-		"languages": [
-			{
-				"id": "javascript",
-				"extensions": [
-					".jsw",
-					".js"
-				]
-			},
-			{
-				"id": "jsonc",
-				"extensions": [
-					"jobs.config"
-				]
-			}
-		],
-		"snippets": [
-			{
-				"language": "javascript",
-				"path": "./snippets.json"
-			}
-		]
-	},
-	"categories": [
-		"Other"
-	],
-	"engines": {
-		"vscode": "^1.37.0"
-	},
-	"devDependencies": {
-		"@types/glob": "^7.1.1",
-		"@types/mocha": "^5.2.6",
-		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.37.0",
-		"eslint": "^5.13.0",
-		"glob": "^7.1.4",
-		"mocha": "^6.1.4",
-		"typescript": "^3.3.1",
-		"vscode-test": "^1.0.2"
-	}
+  "name": "vscode-corvid",
+  "displayName": "VSCode Corvid",
+  "description": "",
+  "version": "0.1.0",
+  "author": "alexanderz@wix.com",
+  "scripts": {
+    "test": "node ./test/runTest.js",
+    "eslint": "eslint . --fix"
+  },
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [],
+    "languages": [
+      {
+        "id": "javascript",
+        "extensions": [
+          ".jsw",
+          ".js"
+        ]
+      },
+      {
+        "id": "jsonc",
+        "extensions": [
+          "jobs.config"
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets.json"
+      }
+    ]
+  },
+  "categories": [
+    "Other"
+  ],
+  "engines": {
+    "vscode": "^1.37.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
+    "@types/vscode": "^1.37.0",
+    "eslint": "^6.2.2",
+    "glob": "^7.1.4",
+    "mocha": "^6.1.4",
+    "typescript": "^3.3.1",
+    "vscode-test": "^1.0.2"
+  }
 }
