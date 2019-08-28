@@ -4,6 +4,7 @@
   "description": "",
   "version": "0.1.0",
   "author": "alexanderz@wix.com",
+  "publisher": "shoonia",
   "scripts": {
     "test": "node ./test/runTest.js",
     "eslint": "eslint . --fix"

@@ -4,3 +4,4 @@ test/
 
 *.vsix
 *.log*
+.env*
