@@ -2,7 +2,7 @@
   "name": "vscode-corvid",
   "displayName": "VSCode Corvid",
   "description": "",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "alexanderz@wix.com",
   "publisher": "shoonia",
   "scripts": {
@@ -10,7 +10,7 @@
     "eslint": "eslint . --fix"
   },
   "main": "./extension.js",
-  "icon": "./icons/logo.png",
+  "icon": "icons/logo.png",
   "activationEvents": [],
   "contributes": {
     "commands": [],
@@ -25,6 +25,7 @@
       {
         "id": "jsonc",
         "extensions": [
+          ".wix",
           "jobs.config"
         ]
       }

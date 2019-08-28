@@ -1,6 +1,6 @@
 {
   "wixWindow": {
-    "prefix": "wixWindow",
+    "prefix": "iww",
     "scope": "javascript",
     "body": [
       "import wixWindow from 'wix-window';"
@@ -8,10 +8,34 @@
     "description": ""
   },
   "wixData": {
-    "prefix": "wixData",
+    "prefix": "iwd",
     "scope": "javascript",
     "body": [
       "import wixData from 'wix-data';"
+    ],
+    "description": ""
+  },
+  "wixLocation": {
+    "prefix": "iwl",
+    "scope": "javascript",
+    "body": [
+      "import wixLocation from 'wix-location';"
+    ],
+    "description": ""
+  },
+  "wixUsers": {
+    "prefix": "iwu",
+    "scope": "javascript",
+    "body": [
+      "import wixUsers from 'wix-users';"
+    ],
+    "description": ""
+  },
+  "wixUsersBackend": {
+    "prefix": "iwub",
+    "scope": "javascript",
+    "body": [
+      "import wixUsersBackend from 'wix-users-backend';"
     ],
     "description": ""
   }
