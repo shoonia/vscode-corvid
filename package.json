@@ -9,8 +9,9 @@
     "test": "node ./test/runTest.js",
     "eslint": "eslint . --fix"
   },
-  "activationEvents": [],
   "main": "./extension.js",
+  "icon": "./icons/logo.png",
+  "activationEvents": [],
   "contributes": {
     "commands": [],
     "languages": [
@@ -51,5 +52,15 @@
     "mocha": "^6.1.4",
     "typescript": "^3.3.1",
     "vscode-test": "^1.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoonia/vscode-corvid.git"
+  },
+  "keywords": [
+    "wix",
+    "corvid",
+    "wixcode"
+  ],
+  "license": "MIT"
 }

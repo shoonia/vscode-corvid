@@ -1,10 +1,18 @@
 {
   "wixWindow": {
-    "prefix": "iww",
+    "prefix": "wixWindow",
     "scope": "javascript",
     "body": [
       "import wixWindow from 'wix-window';"
     ],
-    "description": "The wix-window module contains functionality that pertains to the current browser window."
+    "description": ""
+  },
+  "wixData": {
+    "prefix": "wixData",
+    "scope": "javascript",
+    "body": [
+      "import wixData from 'wix-data';"
+    ],
+    "description": ""
   }
 }
