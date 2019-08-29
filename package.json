@@ -1,7 +1,7 @@
 {
   "name": "vscode-corvid",
-  "displayName": "VSCode Corvid",
-  "description": "",
+  "displayName": "corvid",
+  "description": "The extension to work with corvid-cli.",
   "version": "0.1.2",
   "author": "alexanderz@wix.com",
   "publisher": "shoonia",
@@ -44,14 +44,10 @@
     "vscode": "^1.37.0"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.1",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^10.12.21",
     "@types/vscode": "^1.37.0",
     "eslint": "^6.2.2",
     "glob": "^7.1.4",
     "mocha": "^6.1.4",
-    "typescript": "^3.3.1",
     "vscode-test": "^1.0.2"
   },
   "repository": {
