@@ -11,7 +11,9 @@
   },
   "main": "./extension.js",
   "icon": "icons/logo.png",
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:javascript"
+  ],
   "contributes": {
     "commands": [],
     "languages": [
@@ -44,7 +46,6 @@
     "vscode": "^1.37.0"
   },
   "devDependencies": {
-    "@types/vscode": "^1.37.0",
     "eslint": "^6.2.2",
     "glob": "^7.1.4",
     "mocha": "^6.1.4",
