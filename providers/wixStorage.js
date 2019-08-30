@@ -4,39 +4,19 @@ const kind = vs.CompletionItemKind;
 
 const list = createCompletionList([
   {
-    name: 'currentUser',
-    kind: kind.Property,
-  },
-  {
-    name: 'emailUser',
+    name: 'getItem',
     kind: kind.Method,
   },
   {
-    name: 'login',
+    name: 'setItem',
     kind: kind.Method,
   },
   {
-    name: 'logout',
+    name: 'removeItem',
     kind: kind.Method,
   },
   {
-    name: 'onLogin',
-    kind: kind.Method,
-  },
-  {
-    name: 'promptLogin',
-    kind: kind.Method,
-  },
-  {
-    name: 'register',
-    kind: kind.Method,
-  },
-  {
-    name: 'promptForgotPassword',
-    kind: kind.Method,
-  },
-  {
-    name: 'applySessionToken',
+    name: 'clear',
     kind: kind.Method,
   },
 ]);
@@ -45,7 +25,7 @@ module.exports = {
   provideCompletionItems(document, position) {
     const prefix = document.lineAt(position).text.substr(0, position.character);
 
-    if (prefix.endsWith('wixUsers.')) {
+    if (/(local|session|memory)\.$/.test(prefix)) {
       return list;
     }
   },

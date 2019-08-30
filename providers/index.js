@@ -5,6 +5,9 @@ function register(provider) {
 }
 
 module.exports = [
-  register(require('./wixUsers')),
   register(require('./Users')),
+  register(require('./wixUsers')),
+  register(require('./wixUsersBackend')),
+  register(require('./wixWindow')),
+  register(require('./wixStorage')),
 ];

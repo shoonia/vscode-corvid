@@ -16,27 +16,23 @@ const list = createCompletionList([
     kind: kind.Method,
   },
   {
-    name: 'logout',
-    kind: kind.Method,
-  },
-  {
-    name: 'onLogin',
-    kind: kind.Method,
-  },
-  {
-    name: 'promptLogin',
-    kind: kind.Method,
-  },
-  {
     name: 'register',
     kind: kind.Method,
   },
   {
-    name: 'promptForgotPassword',
+    name: 'generateSessionToken',
     kind: kind.Method,
   },
   {
-    name: 'applySessionToken',
+    name: 'approveByEmail',
+    kind: kind.Method,
+  },
+  {
+    name: 'approveByToken',
+    kind: kind.Method,
+  },
+  {
+    name: 'blockByEmail',
     kind: kind.Method,
   },
 ]);
@@ -45,7 +41,7 @@ module.exports = {
   provideCompletionItems(document, position) {
     const prefix = document.lineAt(position).text.substr(0, position.character);
 
-    if (prefix.endsWith('wixUsers.')) {
+    if (prefix.endsWith('wixUsersBackend.')) {
       return list;
     }
   },

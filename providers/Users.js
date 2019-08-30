@@ -17,15 +17,15 @@ const list = createCompletionList([
   },
   {
     name: 'getEmail',
-    kind: kind.Property,
+    kind: kind.Method,
   },
   {
     name: 'getPricingPlans',
-    kind: kind.Property,
+    kind: kind.Method,
   },
   {
     name: 'getRoles',
-    kind: kind.Property,
+    kind: kind.Method,
   },
 ]);
 
@@ -33,10 +33,8 @@ module.exports = {
   provideCompletionItems(document, position) {
     const prefix = document.lineAt(position).text.substr(0, position.character);
 
-    if (!prefix.endsWith('wixUsers.currentUser.')) {
-      return undefined;
+    if (/(wixUsers|wixUsersBackend)\.currentUser\.$/.test(prefix)) {
+      return list;
     }
-
-    return list;
   },
 };

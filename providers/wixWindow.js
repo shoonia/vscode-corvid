@@ -4,39 +4,55 @@ const kind = vs.CompletionItemKind;
 
 const list = createCompletionList([
   {
-    name: 'currentUser',
+    name: 'browserLocale',
     kind: kind.Property,
   },
   {
-    name: 'emailUser',
+    name: 'formFactor',
+    kind: kind.Property,
+  },
+  {
+    name: 'referrer',
+    kind: kind.Property,
+  },
+  {
+    name: 'viewMode',
+    kind: kind.Property,
+  },
+  {
+    name: 'getBoundingRect',
     kind: kind.Method,
   },
   {
-    name: 'login',
+    name: 'getCurrentGeolocation',
     kind: kind.Method,
   },
   {
-    name: 'logout',
+    name: 'getRouterData',
     kind: kind.Method,
   },
   {
-    name: 'onLogin',
+    name: 'openLightbox',
     kind: kind.Method,
   },
   {
-    name: 'promptLogin',
+    name: 'openModal',
     kind: kind.Method,
   },
   {
-    name: 'register',
+    name: 'postMessage',
     kind: kind.Method,
   },
   {
-    name: 'promptForgotPassword',
+    name: 'scrollBy',
     kind: kind.Method,
   },
   {
-    name: 'applySessionToken',
+    name: 'scrollTo',
+    kind: kind.Method,
+  },
+  {
+    name: 'trackEvent',
     kind: kind.Method,
   },
 ]);
@@ -45,7 +61,7 @@ module.exports = {
   provideCompletionItems(document, position) {
     const prefix = document.lineAt(position).text.substr(0, position.character);
 
-    if (prefix.endsWith('wixUsers.')) {
+    if (prefix.endsWith('wixWindow.')) {
       return list;
     }
   },
