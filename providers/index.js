@@ -12,4 +12,8 @@ module.exports = [
   register(require('./wixWindow')),
   register(require('./wixStorage')),
   register(require('./wixData')),
+  register(require('./wixLocation')),
+  register(require('./wixSite')),
+  register(require('./wixStores')),
+  register(require('./wixBookings')),
 ];

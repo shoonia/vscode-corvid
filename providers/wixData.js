@@ -1,76 +1,26 @@
 const vs = require('vscode');
 const { createCompletionList } = require('./util');
-const kind = vs.CompletionItemKind;
+
+const K = vs.CompletionItemKind;
 
 const list = createCompletionList([
-  {
-    name: 'get',
-    kind: kind.Method,
-  },
-  {
-    name: 'query',
-    kind: kind.Method,
-  },
-  {
-    name: 'insert',
-    kind: kind.Method,
-  },
-  {
-    name: 'update',
-    kind: kind.Method,
-  },
-  {
-    name: 'remove',
-    kind: kind.Method,
-  },
-  {
-    name: 'save',
-    kind: kind.Method,
-  },
-  {
-    name: 'sort',
-    kind: kind.Method,
-  },
-  {
-    name: 'filter',
-    kind: kind.Method,
-  },
-  {
-    name: 'aggregate',
-    kind: kind.Method,
-  },
-  {
-    name: 'bulkInsert',
-    kind: kind.Method,
-  },
-  {
-    name: 'bulkSave',
-    kind: kind.Method,
-  },
-  {
-    name: 'bulkUpdate',
-    kind: kind.Method,
-  },
-  {
-    name: 'insertReference',
-    kind: kind.Method,
-  },
-  {
-    name: 'isReferenced',
-    kind: kind.Method,
-  },
-  {
-    name: 'queryReferenced',
-    kind: kind.Method,
-  },
-  {
-    name: 'removeReference',
-    kind: kind.Method,
-  },
-  {
-    name: 'replaceReferences',
-    kind: kind.Method,
-  },
+  { name: 'get', kind: K.Method },
+  { name: 'query', kind: K.Method },
+  { name: 'insert', kind: K.Method },
+  { name: 'update', kind: K.Method },
+  { name: 'remove', kind: K.Method },
+  { name: 'save', kind: K.Method },
+  { name: 'sort', kind: K.Method },
+  { name: 'filter', kind: K.Method },
+  { name: 'aggregate', kind: K.Method },
+  { name: 'bulkInsert', kind: K.Method },
+  { name: 'bulkSave', kind: K.Method },
+  { name: 'bulkUpdate', kind: K.Method },
+  { name: 'insertReference', kind: K.Method },
+  { name: 'isReferenced', kind: K.Method },
+  { name: 'queryReferenced', kind: K.Method },
+  { name: 'removeReference', kind: K.Method },
+  { name: 'replaceReferences', kind: K.Method },
 ]);
 
 module.exports = {

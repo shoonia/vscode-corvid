@@ -1,40 +1,17 @@
 const vs = require('vscode');
 const { createCompletionList } = require('./util');
-const kind = vs.CompletionItemKind;
+
+const K = vs.CompletionItemKind;
 
 const list = createCompletionList([
-  {
-    name: 'currentUser',
-    kind: kind.Property,
-  },
-  {
-    name: 'emailUser',
-    kind: kind.Method,
-  },
-  {
-    name: 'login',
-    kind: kind.Method,
-  },
-  {
-    name: 'register',
-    kind: kind.Method,
-  },
-  {
-    name: 'generateSessionToken',
-    kind: kind.Method,
-  },
-  {
-    name: 'approveByEmail',
-    kind: kind.Method,
-  },
-  {
-    name: 'approveByToken',
-    kind: kind.Method,
-  },
-  {
-    name: 'blockByEmail',
-    kind: kind.Method,
-  },
+  { name: 'currentUser', kind: K.Property },
+  { name: 'emailUser', kind: K.Method },
+  { name: 'login', kind: K.Method },
+  { name: 'register', kind: K.Method },
+  { name: 'generateSessionToken', kind: K.Method },
+  { name: 'approveByEmail', kind: K.Method },
+  { name: 'approveByToken', kind: K.Method },
+  { name: 'blockByEmail', kind: K.Method },
 ]);
 
 module.exports = {
