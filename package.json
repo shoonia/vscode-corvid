@@ -6,7 +6,6 @@
   "author": "alexanderz@wix.com",
   "publisher": "shoonia",
   "scripts": {
-    "test": "node ./test/runTest.js",
     "eslint": "eslint . --fix"
   },
   "main": "./extension.js",
@@ -47,8 +46,7 @@
     "vscode": "^1.37.0"
   },
   "devDependencies": {
-    "eslint": "^6.2.2",
-    "glob": "^7.1.4"
+    "eslint": "^6.2.2"
   },
   "repository": {
     "type": "git",
