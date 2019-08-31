@@ -1,6 +1,9 @@
 # Change Log
 
 ## v0.4.0
+Autocomplete for `wixLocation`, `wixBookings`, `wixSite`, `wixStores`
+
+## v0.3.1
 * The extension runs only `corvid-cli` workspace.
 * Added autocomplete for `wixData` module and import.
 
