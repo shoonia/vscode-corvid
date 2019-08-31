@@ -10,4 +10,5 @@ module.exports = [
   register(require('./wixUsersBackend')),
   register(require('./wixWindow')),
   register(require('./wixStorage')),
+  register(require('./wixData')),
 ];
