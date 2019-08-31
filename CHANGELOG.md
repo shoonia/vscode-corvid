@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.4.0
+* The extension runs only `corvid-cli` workspace.
+* Added autocomplete for `wixData` module and import.
+
 ## v0.3.0
 Autocomplete for `wixWindow`, `wixUsers`, `wixUsersBackend`, `wixStorage` modules
 
