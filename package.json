@@ -37,6 +37,12 @@
         "language": "javascript",
         "path": "./snippets.json"
       }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "jobs.config",
+        "url": "./schema/jobs.config-schema.json"
+      }
     ]
   },
   "categories": [

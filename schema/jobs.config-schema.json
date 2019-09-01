@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "title": "Configuring Jobs",
+  "properties": {
+    "jobs": {
+      "type": "array",
+      "markdownDescription": "",
+      "additionalItems": false,
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "functionLocation": {
+            "type": "string",
+            "default": "/",
+            "markdownDescription": ""
+          },
+          "executionConfig": {
+            "type": "object",
+            "markdownDescription": "",
+            "properties": {
+              "time": {
+                "type": "string",
+                "markdownDescription": "",
+                "minLength": 5,
+                "maxLength": 5,
+                "pattern": "[0-2][0-9]:[0-5][0-9]",
+                "default": "00:00"
+              },
+              "dayOfWeek": {
+                "type": "string",
+                "markdownDescription": "",
+                "default": "Monday",
+                "enum": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ]
+              },
+              "dateInMonth": {
+                "type": "number",
+                "markdownDescription": "",
+                "default": 1,
+                "minimum": 1,
+                "maximum": 31
+              }
+            },
+            "required": [
+              "time"
+            ]
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "functionLocation",
+          "executionConfig"
+        ]
+      }
+    }
+  },
+  "required": [
+    "jobs"
+  ]
+}
