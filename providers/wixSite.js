@@ -1,10 +1,9 @@
 const vs = require('vscode');
-const { createCompletionList } = require('./util');
+const { createCompletionList, isBackend } = require('./util');
 
 const K = vs.CompletionItemKind;
 
-// wix-site
-const listSite = createCompletionList([
+const listSiteFronend = createCompletionList([
   { name: 'currency', kind: K.Property },
   { name: 'currentPage', kind: K.Property },
   { name: 'language', kind: K.Property },
@@ -15,8 +14,11 @@ const listSite = createCompletionList([
   { name: 'routerSitemap', kind: K.Method },
 ]);
 
-// wix-site-backend
 const listSiteBackend = createCompletionList([
+  { name: 'generalInfo', kind: K.Property },
+]);
+
+const listSiteGeneralInfo = createCompletionList([
   { name: 'getAddress', kind: K.Method },
   { name: 'getBusinessName', kind: K.Method },
   { name: 'getBusinessSchedule', kind: K.Method },
@@ -35,15 +37,16 @@ const listSiteBackend = createCompletionList([
 ]);
 
 module.exports = {
-  provideCompletionItems(document, position) {
-    const prefix = document.lineAt(position).text.substr(0, position.character);
+  provideCompletionItems(doc, position) {
+    const isBack = isBackend(doc.uri.path);
+    const prefix = doc.lineAt(position).text.substr(0, position.character);
 
-    if (prefix.endsWith('wixSite.')) {
-      return listSite;
+    if (isBack && /(wixSite\.)?generalInfo\.$/.test(prefix)) {
+      return listSiteGeneralInfo;
     }
 
-    if (/(wixSite\.)?generalInfo/.test(prefix)) {
-      return listSiteBackend;
+    if (prefix.endsWith('wixSite.')) {
+      return isBack ? listSiteBackend : listSiteFronend;
     }
   },
 };

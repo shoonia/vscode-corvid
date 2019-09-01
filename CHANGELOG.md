@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.5.0
+* Added validation `jobs.config` file.
+* Autocomplete for `wixCRM` and `wixMarketing` modules.
+
 ## v0.4.0
 Autocomplete for `wixLocation`, `wixBookings`, `wixSite`, `wixStores`
 

@@ -1,9 +1,9 @@
 const vs = require('vscode');
-const { createCompletionList } = require('./util');
+const { createCompletionList, isBackend } = require('./util');
 
 const K = vs.CompletionItemKind;
 
-const list = createCompletionList([
+const listFronend = createCompletionList([
   { name: 'currentUser', kind: K.Property },
   { name: 'emailUser', kind: K.Method },
   { name: 'login', kind: K.Method },
@@ -15,12 +15,23 @@ const list = createCompletionList([
   { name: 'applySessionToken', kind: K.Method },
 ]);
 
-module.exports = {
-  provideCompletionItems(document, position) {
-    const prefix = document.lineAt(position).text.substr(0, position.character);
+const listBackend = createCompletionList([
+  { name: 'currentUser', kind: K.Property },
+  { name: 'approveByEmail', kind: K.Method },
+  { name: 'approveByToken', kind: K.Method },
+  { name: 'blockByEmail', kind: K.Method },
+  { name: 'emailUser', kind: K.Method },
+  { name: 'generateSessionToken', kind: K.Method },
+  { name: 'login', kind: K.Method },
+  { name: 'register', kind: K.Method },
+]);
 
-    if (prefix.endsWith('wixUsers.')) {
-      return list;
+module.exports = {
+  provideCompletionItems(doc, position) {
+    const prefix = doc.lineAt(position).text.substr(0, position.character);
+
+    if (/wixUsers(Backend)?\.$/.test(prefix)) {
+      return isBackend(doc.uri.path) ? listBackend : listFronend;
     }
   },
 };

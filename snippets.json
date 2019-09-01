@@ -35,7 +35,7 @@
     "prefix": "iwub",
     "scope": "javascript",
     "body": [
-      "import wixUsersBackend from 'wix-users-backend';"
+      "import wixUsers from 'wix-users-backend';"
     ],
     "description": "wix-users-backend"
   },
