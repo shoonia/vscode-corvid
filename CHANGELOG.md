@@ -1,5 +1,8 @@
 # Change Log
 
+## v0.5.1
+Ignore devDependencies
+
 ## v0.5.0
 * Added validation `jobs.config` file.
 * Autocomplete for `wixCRM` and `wixMarketing` modules.
