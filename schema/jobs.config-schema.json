@@ -1,10 +1,12 @@
 {
   "type": "object",
-  "title": "Configuring Jobs",
+  "title": "Scheduling Recurring Jobs",
+  "description": "The jobs.config file contains a JSON object which defines the scheduled jobs.",
   "properties": {
     "jobs": {
       "type": "array",
-      "markdownDescription": "",
+      "title": "jobs (Array)",
+      "description": "The key maps to an array of objects, each of which represents a scheduled job. You can configure up to 20 jobs.",
       "additionalItems": false,
       "minItems": 1,
       "maxItems": 20,
@@ -14,24 +16,26 @@
         "properties": {
           "functionLocation": {
             "type": "string",
-            "default": "/",
-            "markdownDescription": ""
+            "title": "functionLocation (String)",
+            "description": "The location of the backend function that will run at the scheduled time. The function can be any function in any backend .js file.",
+            "default": "/"
           },
           "executionConfig": {
             "type": "object",
-            "markdownDescription": "",
+            "title": "executionConfig (Object)",
+            "description": "An object containing information about when the job should run.",
             "properties": {
               "time": {
                 "type": "string",
-                "markdownDescription": "",
-                "minLength": 5,
-                "maxLength": 5,
+                "title": "time (String)",
+                "description": "The time of day the job runs. The time is specified as UTC time in HH:MM format.",
                 "pattern": "[0-2][0-9]:[0-5][0-9]",
                 "default": "00:00"
               },
               "dayOfWeek": {
                 "type": "string",
-                "markdownDescription": "",
+                "title": "dayOfWeek (String)",
+                "description": "The day of the week the job runs on. For daily or monthly jobs, omit the dayOfWeek property.",
                 "default": "Monday",
                 "enum": [
                   "Monday",
@@ -44,8 +48,9 @@
                 ]
               },
               "dateInMonth": {
-                "type": "number",
-                "markdownDescription": "",
+                "type": "integer",
+                "title": "dateInMonth (Number)",
+                "description": "The day of the month the job runs on. A number between 1 and 31.",
                 "default": 1,
                 "minimum": 1,
                 "maximum": 31
@@ -56,7 +61,9 @@
             ]
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "title": "description (String)",
+            "description": "A description of the job."
           }
         },
         "required": [
