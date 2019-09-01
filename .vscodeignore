@@ -5,6 +5,8 @@ test/**
 .eslintrc
 .env
 yarn.lock
+rollup.config.js
 **/jsconfig.json
 **/*.map
 node_modules/**
+src/**

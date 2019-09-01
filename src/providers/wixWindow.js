@@ -1,7 +1,4 @@
-const vs = require('vscode');
-const { createCompletionList } = require('./util');
-
-const K = vs.CompletionItemKind;
+import { createCompletionList, K } from './util';
 
 const windowList = createCompletionList([
   { name: 'browserLocale', kind: K.Property },
@@ -37,7 +34,7 @@ const lightboxList = createCompletionList([
   { name: 'getContext', kind: K.Method },
 ]);
 
-module.exports = {
+export default {
   provideCompletionItems(document, position) {
     const prefix = document.lineAt(position).text.substr(0, position.character);
 

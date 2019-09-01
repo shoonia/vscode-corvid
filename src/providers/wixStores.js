@@ -1,7 +1,4 @@
-const vs = require('vscode');
-const { createCompletionList, isBackend } = require('./util');
-
-const K = vs.CompletionItemKind;
+import { createCompletionList, isBackend, K } from './util';
 
 const listFronend = createCompletionList([
   { name: 'getProductOptionsAvailability', kind: K.Method },
@@ -12,7 +9,7 @@ const listBackend = createCompletionList([
   { name: 'getProductOptionsAvailability', kind: K.Method },
 ]);
 
-module.exports = {
+export default {
   provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
 

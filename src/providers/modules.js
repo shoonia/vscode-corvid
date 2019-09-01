@@ -1,7 +1,4 @@
-const vs = require('vscode');
-const { createCompletionList, isBackend } = require('./util');
-
-const K = vs.CompletionItemKind;
+import { createCompletionList, isBackend, K } from './util';
 
 const listFronend = createCompletionList([
   { name: 'wixBookings from \'wix-bookings\';', kind: K.Module },
@@ -32,7 +29,7 @@ const listBackend = createCompletionList([
   { name: 'wixUsers from \'wix-users-backend\';', kind: K.Module },
 ]);
 
-module.exports = {
+export default {
   provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
 

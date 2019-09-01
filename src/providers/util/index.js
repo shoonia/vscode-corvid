@@ -1,13 +1,15 @@
-const vs = require('vscode');
+import vs from 'vscode';
 
 const IS_BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
 
-module.exports.createCompletionList = function (list) {
+export const K = vs.CompletionItemKind;
+
+export function createCompletionList(list) {
   return list.map(({ name, kind }) => {
     return new vs.CompletionItem(name, kind);
   });
-};
+}
 
-module.exports.isBackend = function (path) {
+export function isBackend(path) {
   return IS_BACKEND.test(path);
-};
+}

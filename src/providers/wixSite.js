@@ -1,7 +1,4 @@
-const vs = require('vscode');
-const { createCompletionList, isBackend } = require('./util');
-
-const K = vs.CompletionItemKind;
+import { createCompletionList, isBackend, K } from './util';
 
 const listSiteFronend = createCompletionList([
   { name: 'currency', kind: K.Property },
@@ -36,7 +33,7 @@ const listSiteGeneralInfo = createCompletionList([
   { name: 'getTimeZone', kind: K.Method },
 ]);
 
-module.exports = {
+export default {
   provideCompletionItems(doc, position) {
     const isBack = isBackend(doc.uri.path);
     const prefix = doc.lineAt(position).text.substr(0, position.character);

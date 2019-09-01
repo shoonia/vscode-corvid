@@ -6,9 +6,10 @@
   "author": "alexanderz@wix.com",
   "publisher": "shoonia",
   "scripts": {
-    "eslint": "eslint . --fix"
+    "eslint": "eslint . --fix",
+    "rollup": "rollup --config rollup.config.js"
   },
-  "main": "./extension.js",
+  "main": "./dist/extension.js",
   "icon": "icons/logo.png",
   "activationEvents": [
     "workspaceContains:.corvid/corvidrc.json",
@@ -52,7 +53,9 @@
     "vscode": "^1.37.0"
   },
   "devDependencies": {
-    "eslint": "^6.2.2"
+    "eslint": "^6.2.2",
+    "rollup": "^1.20.3",
+    "rollup-plugin-commonjs": "^10.1.0"
   },
   "repository": {
     "type": "git",

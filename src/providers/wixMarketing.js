@@ -1,7 +1,4 @@
-const vs = require('vscode');
-const { createCompletionList } = require('./util');
-
-const K = vs.CompletionItemKind;
+import { createCompletionList, K } from './util';
 
 const list = createCompletionList([
   { name: 'coupons', kind: K.Property },
@@ -13,7 +10,7 @@ const listCoupons = createCompletionList([
   { name: 'updateCouponFields', kind: K.Method },
 ]);
 
-module.exports = {
+export default {
   provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
 
