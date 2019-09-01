@@ -4,6 +4,7 @@ src/**
 
 .gitignore
 .eslintrc
+.eslintignore
 .env
 
 yarn.lock
@@ -12,3 +13,4 @@ jsconfig.json
 
 *.map
 *.log*
+*.vsix
