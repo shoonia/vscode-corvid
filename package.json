@@ -7,7 +7,8 @@
   "publisher": "shoonia",
   "scripts": {
     "eslint": "eslint . --fix",
-    "rollup": "rollup --config rollup.config.js"
+    "start": "rollup --config rollup.config.js --watch",
+    "build": "rollup --config rollup.config.js"
   },
   "main": "./dist/extension.js",
   "icon": "icons/logo.png",

@@ -1,6 +1,5 @@
 node_modules/
-.vscode-test/
-test/
+dist/
 
 *.vsix
 *.log*
