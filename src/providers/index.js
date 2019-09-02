@@ -1,5 +1,6 @@
 import { languages } from 'vscode';
 
+import $w from './$w';
 import modules from './modules';
 import Users from './Users';
 import wixCRM from './wixCRM';
@@ -12,6 +13,8 @@ import wixLocation from './wixLocation';
 import wixSite from './wixSite';
 import wixStores from './wixStores';
 import wixBookings from './wixBookings';
+import wixPay from './wixPay';
+import wixPaidPlans from './wixPaidPlans';
 
 function register(provider) {
   return languages.registerCompletionItemProvider(
@@ -22,6 +25,7 @@ function register(provider) {
 }
 
 export default [
+  register($w),
   register(modules),
   register(Users),
   register(wixCRM),
@@ -34,4 +38,6 @@ export default [
   register(wixSite),
   register(wixStores),
   register(wixBookings),
+  register(wixPay),
+  register(wixPaidPlans),
 ];

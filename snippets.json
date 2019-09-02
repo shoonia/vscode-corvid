@@ -1,4 +1,15 @@
 {
+  "$w": {
+    "prefix": [
+      "$",
+      "$w"
+    ],
+    "scope": "javascript",
+    "body": [
+      "\\$w('#${1}')"
+    ],
+    "description": "function $w(selector: string): Element | Array<Element>"
+  },
   "wixWindow": {
     "prefix": "iww",
     "scope": "javascript",

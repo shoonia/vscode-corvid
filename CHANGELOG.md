@@ -1,5 +1,8 @@
 # Change Log
 
+## v0.5.2
+Autocomplete for `$w`, `wixPay` and `wixPaidPlans` modules.
+
 ## v0.5.1
 Ignore devDependencies
 

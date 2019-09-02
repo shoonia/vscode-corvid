@@ -13,16 +13,12 @@ const listFronend = createCompletionList([
   { name: 'wixStores from \'wix-stores\';', kind: K.Module },
   { name: 'wixUsers from \'wix-users\';', kind: K.Module },
   { name: 'wixWindow from \'wix-window\';', kind: K.Module },
-  // { name: '? from \'wix-fetch\';', kind: K.Module },
-  // { name: '? from \'wix-http-functions\';', kind: K.Module },
 ]);
 
 const listBackend = createCompletionList([
   { name: 'wixData from \'wix-data\';', kind: K.Module }, // Duplication. Find a better way
   { name: 'wixCRM from \'wix-crm-backend\';', kind: K.Module },
   { name: 'wixMarketing from \'wix-marketing-backend\';', kind: K.Module },
-  { name: 'wixRouter from \'wix-router\';', kind: K.Module },
-  { name: 'wixPaidPlans from \'wix-paid-plans-backend\';', kind: K.Module },
   { name: 'wixPay from \'wix-pay-backend\';', kind: K.Module },
   { name: 'wixSite from \'wix-site-backend\';', kind: K.Module },
   { name: 'wixStores from \'wix-stores-backend\';', kind: K.Module },
