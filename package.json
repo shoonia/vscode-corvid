@@ -15,7 +15,8 @@
   "icon": "icons/logo.png",
   "activationEvents": [
     "workspaceContains:.corvid/corvidrc.json",
-    "workspaceContains:**/*.jsw"
+    "workspaceContains:**/*.jsw",
+    "workspaceContains:jobs.config"
   ],
   "contributes": {
     "commands": [],

@@ -10,9 +10,49 @@
       "additionalItems": false,
       "minItems": 1,
       "maxItems": 20,
+      "defaultSnippets": [
+        {
+          "label": "For daily jobs",
+          "body": [
+            {
+              "functionLocation": "/$1",
+              "description": "$2",
+              "executionConfig": {
+                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$3"
+              }
+            }
+          ]
+        },
+        {
+          "label": "For monthly jobs",
+          "body": [
+            {
+              "functionLocation": "/$1",
+              "description": "$2",
+              "executionConfig": {
+                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$3",
+                "dateInMonth": 1
+              }
+            }
+          ]
+        },
+        {
+          "label": "For weekly jobs",
+          "body": [
+            {
+              "functionLocation": "/$1",
+              "description": "$2",
+              "executionConfig": {
+                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$3",
+                "dayOfWeek": "$CURRENT_DAY_NAME$4"
+              }
+            }
+          ]
+        }
+      ],
       "items": {
         "type": "object",
-        "additionalProperties": true,
+        "additionalProperties": false,
         "properties": {
           "functionLocation": {
             "type": "string",
@@ -24,6 +64,29 @@
             "type": "object",
             "title": "executionConfig (Object)",
             "description": "An object containing information about when the job should run.",
+            "additionalProperties": false,
+            "defaultSnippets": [
+              {
+                "label": "For daily jobs",
+                "body": {
+                  "time": "$CURRENT_HOUR:$CURRENT_MINUTE$1"
+                }
+              },
+              {
+                "label": "For weekly jobs",
+                "body": {
+                  "time": "$CURRENT_HOUR:$CURRENT_MINUTE$1",
+                  "dayOfWeek": "$CURRENT_DAY_NAME$2"
+                }
+              },
+              {
+                "label": "For monthly jobs",
+                "body": {
+                  "time": "$CURRENT_HOUR:$CURRENT_MINUTE$1",
+                  "dateInMonth": 1
+                }
+              }
+            ],
             "properties": {
               "time": {
                 "type": "string",
