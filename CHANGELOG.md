@@ -1,5 +1,8 @@
 # Change Log
 
+#v0.6.1
+Default snippets for `jobs.config`
+
 ## v0.6.0
 Autocomplete for `$w`, `wixPay` and `wixPaidPlans` modules.
 

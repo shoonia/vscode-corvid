@@ -2,7 +2,7 @@
   "name": "vscode-corvid",
   "displayName": "Corvid",
   "description": "The extension to work with corvid-cli.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "author": "alexanderz@wix.com",
   "publisher": "shoonia",
   "scripts": {
