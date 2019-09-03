@@ -1,6 +1,6 @@
 # Change Log
 
-## v0.5.2
+## v0.6.0
 Autocomplete for `$w`, `wixPay` and `wixPaidPlans` modules.
 
 ## v0.5.1
