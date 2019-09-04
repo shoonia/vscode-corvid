@@ -9,6 +9,8 @@ const config = {
     sourcemap: false,
   },
   external: [
+    'fs',
+    'path',
     'vscode',
   ],
   plugins: [
