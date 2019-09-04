@@ -15,17 +15,19 @@ import wixStores from './wixStores';
 import wixBookings from './wixBookings';
 import wixPay from './wixPay';
 import wixPaidPlans from './wixPaidPlans';
+import roles from './roles';
 
-function register(provider) {
+function register(provider, trigger = '.') {
   return languages.registerCompletionItemProvider(
     { scheme: 'file', language: 'javascript' },
     provider,
-    '.',
+    trigger,
   );
 }
 
 export default [
   register($w),
+  register(roles, '#'),
   register(modules),
   register(Users),
   register(wixCRM),

@@ -10,7 +10,7 @@ const config = {
   },
   external: [
     'fs',
-    'path',
+    'util',
     'vscode',
   ],
   plugins: [
