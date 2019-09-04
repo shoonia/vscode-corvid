@@ -1,6 +1,8 @@
 # VSCode Corvid
 
-The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid). Highlighting `.jsw` files.
+The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid). Highlighting .jsw, support jobs.config, autocomplete, snippets.
+
+![](icons/exemple-1.png)  
 
 # Snippets List
 
