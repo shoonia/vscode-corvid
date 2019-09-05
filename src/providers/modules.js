@@ -76,7 +76,7 @@ const listFronend = createCompletionList([
   {
     name: 'wixWindow from \'wix-window\'',
     kind: K.Module,
-    snippet: 'import wixWindow from \'wix-window\';',
+    snippet: 'wixWindow from \'wix-window\';',
     docs: 'The wix-window module contains functionality that pertains to the current browser window.',
   },
 ]);
