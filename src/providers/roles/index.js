@@ -8,6 +8,17 @@ import {
   createCompletionList,
 } from '../util';
 
+const cache = new Map();
+
+function getFileUpdatedDate(path) {
+  try {
+    const stats = fs.statSync(path);
+    return stats.mtime.getTime();
+  } catch (error) {
+    return error;
+  }
+}
+
 function readFile(name) {
   try {
     return fs.readFileSync(name, 'utf8');
@@ -33,6 +44,19 @@ function parseJSON(text) {
 }
 
 function getRoles(wixFile) {
+  const ts = getFileUpdatedDate(wixFile);
+
+  if (typeof ts !== 'number') {
+    return;
+  }
+  if (cache.has(wixFile)) {
+    const data = cache.get(wixFile);
+
+    if (data.ts === ts) {
+      return data.roles;
+    }
+  }
+
   const file = readFile(wixFile);
 
   if (isError(file)) {
@@ -63,15 +87,20 @@ function getRoles(wixFile) {
   ) {
     return;
   }
-
   try {
-    return Object
+    const roles = Object
       .values(obj.data.connections_data)
       .map((elem) => elem.items[0].role)
       .filter(Boolean);
-  } catch (error) { /**/ }
 
-  return;
+    cache.set(wixFile, { roles, ts });
+
+    return roles;
+  } catch (error) {
+    cache.delete(wixFile);
+  }
+
+  return null;
 }
 
 export default {
