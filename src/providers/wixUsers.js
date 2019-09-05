@@ -1,9 +1,24 @@
 import { createCompletionList, isBackend, K } from './util';
 
+const currentUser = {
+  name: 'currentUser',
+  kind: K.Property,
+  detail: 'get currentUser(): User',
+  docs: 'Gets a User object containing information about the user currently viewing the site.',
+};
+
 const listFronend = createCompletionList([
-  { name: 'currentUser', kind: K.Property },
-  { name: 'emailUser', kind: K.Method },
-  { name: 'login', kind: K.Method },
+  currentUser,
+  {
+    name: 'emailUser',
+    kind: K.Method,
+    detail: 'function emailUser(emailId: string, toUser: string, [options: TriggeredEmailOptions]): Promise<void>',
+    docs: 'Sends a Triggered Email to the currently logged-in site member.',
+  },
+  {
+    name: 'login',
+    kind: K.Method,
+  },
   { name: 'logout', kind: K.Method },
   { name: 'onLogin', kind: K.Method },
   { name: 'promptLogin', kind: K.Method },
@@ -13,7 +28,7 @@ const listFronend = createCompletionList([
 ]);
 
 const listBackend = createCompletionList([
-  { name: 'currentUser', kind: K.Property },
+  currentUser,
   { name: 'approveByEmail', kind: K.Method },
   { name: 'approveByToken', kind: K.Method },
   { name: 'blockByEmail', kind: K.Method },
