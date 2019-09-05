@@ -1,9 +1,12 @@
 # Change Log
 
-#v0.7.0
+## v0.8.0
+Added snippets and details for Wix modules
+
+## v0.7.0
 Added autocomplete with id for Wix selectors `$w()` (only for Corvid project)
 
-#v0.6.1
+## v0.6.1
 Default snippets for `jobs.config`
 
 ## v0.6.0

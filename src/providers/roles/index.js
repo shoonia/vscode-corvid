@@ -75,8 +75,14 @@ function getRoles(wixFile) {
 }
 
 export default {
-  provideCompletionItems(doc) {
+  provideCompletionItems(doc, position) {
     if (!isFrontend(doc.uri.path)) return;
+
+    const prefix = doc.lineAt(position).text.substr(0, position.character);
+
+    if (prefix.startsWith('import')) {
+      return; // [HOT FIX]
+    }
 
     // TODO: find better way
     const wixFile = doc.fileName.slice(0, -2) + 'wix';
