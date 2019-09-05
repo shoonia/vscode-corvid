@@ -145,7 +145,7 @@ const lightboxList = createCompletionList([
   {
     name: 'getContext',
     kind: K.Method,
-    snippet: 'getContext();',
+    snippet: 'getContext()',
     detail: 'function getContext(): Object',
     docs: 'Returns the data object that was passed to a lightbox.',
   },

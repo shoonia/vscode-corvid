@@ -1,5 +1,8 @@
 # Change Log
 
+## v0.8.2
+Added snippets and detail for wixUsers
+
 ## v0.8.1
 Added snippets and details for wixWindow, wixLocation, wixStorage, wixData
 

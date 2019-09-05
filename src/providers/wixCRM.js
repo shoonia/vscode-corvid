@@ -10,6 +10,9 @@ const listBackend = createCompletionList([
   { name: 'emailContact', kind: K.Method },
   { name: 'getContactById', kind: K.Method },
   { name: 'updateContact', kind: K.Method },
+  { name: 'notifications', kind: K.Property },
+  { name: 'tasks', kind: K.Property },
+  { name: 'workflows', kind: K.Property },
 ]);
 
 export default {
