@@ -51,14 +51,14 @@ const listElement = createCompletionList([
   {
     name: 'onMouseIn',
     kind: K.Method,
-    snippet: 'onMouseIn((event) => {$1});',
+    snippet: 'onMouseIn((${1:event}) => {$2});',
     detail: 'function onMouseIn(handler: MouseEventHandler): Element\n\ncallback MouseEventHandler(event: MouseEvent, $w: $w): void',
     docs: 'Adds an event handler that runs when the mouse pointer is moved onto the element.',
   },
   {
     name: 'onMouseOut',
     kind: K.Method,
-    snippet: 'onMouseOut((event) => {$1});',
+    snippet: 'onMouseOut((${1:event}) => {$2});',
     detail: 'function onMouseIn(handler: MouseEventHandler): Element\n\ncallback MouseEventHandler(event: MouseEvent, $w: $w): void',
     docs: 'Adds an event handler that runs when the mouse pointer is moved off of the element.',
   },
@@ -72,14 +72,14 @@ const listElement = createCompletionList([
   {
     name: 'onViewportEnter',
     kind: K.Method,
-    snippet: 'onViewportEnter((event) => {$1});',
+    snippet: 'onViewportEnter((${1:event}) => {$2});',
     detail: 'function onViewportEnter(handler: EventHandler): Element\n\ncallback EventHandler(event: Event, $w: $w): void',
     docs: 'Adds an event handler that runs when an element is displayed in the viewable part of the current window.',
   },
   {
     name: 'onViewportLeave',
     kind: K.Method,
-    snippet: 'onViewportLeave((event) => {$1});',
+    snippet: 'onViewportLeave((${1:event}) => {$2});',
     detail: 'function onViewportLeave(handler: EventHandler): Element\n\ncallback EventHandler(event: Event, $w: $w): void',
     docs: 'Adds an event handler that runs when an element is no longer displayed in the viewable part of the current window.',
   },

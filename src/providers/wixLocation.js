@@ -40,7 +40,7 @@ const list = createCompletionList([
   {
     name: 'onChange',
     kind: K.Method,
-    snippet: 'onChange((location) => {$1});',
+    snippet: 'onChange((${1:location}) => {$2});',
     detail: 'function onChange(handler: LocationChangeHandler): void\n\ncallback LocationChangeHandler(event: Location): void',
     docs: 'Adds an event handler that runs when an application page\'s URL changes.',
   },
