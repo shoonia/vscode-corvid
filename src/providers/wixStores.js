@@ -1,12 +1,24 @@
 import { createCompletionList, isBackend, K } from './util';
 
-const listFronend = createCompletionList([
-  { name: 'getProductOptionsAvailability', kind: K.Method },
-]);
+const availability = {
+  name: 'getProductOptionsAvailability',
+  kind: K.Method,
+  snippet: 'getProductOptionsAvailability(${1:productId}, ${2:choices})',
+  detail: 'function getProductOptionsAvailability(productId: string, choices: StoreProductChoices): Promise<ProductOptionsAvailability>',
+  docs: 'Gets the availability of a product based on the specified option choices.',
+};
+
+const listFronend = createCompletionList([availability]);
 
 const listBackend = createCompletionList([
-  { name: 'getCurrentCart', kind: K.Method },
-  { name: 'getProductOptionsAvailability', kind: K.Method },
+  availability,
+  {
+    name: 'getCurrentCart',
+    kind: K.Method,
+    snippet: 'getCurrentCart()',
+    detail: 'function getCurrentCart(): Promise<Cart>',
+    docs: 'Gets the current site visitor\'s shopping cart.',
+  },
 ]);
 
 export default {

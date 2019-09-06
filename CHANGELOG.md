@@ -1,7 +1,7 @@
 # Change Log
 
 ## v0.8.3
-Added snippets and detail for wixSite
+Added snippets and detail for wixSite, wixStores
 
 ## v0.8.2
 Added snippets and detail for wixUsers
