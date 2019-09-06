@@ -1,5 +1,4 @@
 import fs from 'fs';
-import { isError } from 'util';
 
 import {
   K,
@@ -15,7 +14,7 @@ function getFileUpdatedDate(path) {
     const stats = fs.statSync(path);
     return stats.mtime.getTime();
   } catch (error) {
-    return error;
+    return null;
   }
 }
 
@@ -23,7 +22,7 @@ function readFile(name) {
   try {
     return fs.readFileSync(name, 'utf8');
   } catch (error) {
-    return error;
+    return null;
   }
 }
 
@@ -31,7 +30,7 @@ function parseBash64(b64) {
   try {
     return Buffer.from(b64, 'base64').toString('utf8');
   } catch (error) {
-    return error;
+    return null;
   }
 }
 
@@ -39,33 +38,29 @@ function parseJSON(text) {
   try {
     return JSON.parse(text);
   } catch (error) {
-    return error;
+    return null;
   }
 }
 
-function getRoles(wixFile) {
-  const ts = getFileUpdatedDate(wixFile);
-
-  if (typeof ts !== 'number') {
-    return;
-  }
+function getCompletions(wixFile, ts) {
   if (cache.has(wixFile)) {
     const data = cache.get(wixFile);
 
     if (data.ts === ts) {
-      return data.roles;
+      return data.completions;
     }
   }
 
   const file = readFile(wixFile);
 
-  if (isError(file)) {
+  if (file === null) {
     return;
   }
 
   const json = parseJSON(file);
 
   if (
+    json === null ||
     notHas(json, 'content') ||
     notHas(json.content, 'content')
   ) {
@@ -74,14 +69,14 @@ function getRoles(wixFile) {
 
   const data = parseBash64(json.content.content);
 
-  if (isError(data)) {
+  if (data === null) {
     return;
   }
 
   const obj = parseJSON(data);
 
   if (
-    isError(obj) ||
+    obj === null ||
     notHas(obj, 'data') ||
     notHas(obj.data, 'connections_data')
   ) {
@@ -91,11 +86,14 @@ function getRoles(wixFile) {
     const roles = Object
       .values(obj.data.connections_data)
       .map((elem) => elem.items[0].role)
-      .filter(Boolean);
+      .filter(Boolean)
+      .map((name) => ({ name, kind: K.Class }));
 
-    cache.set(wixFile, { roles, ts });
+    const completions = createCompletionList(roles);
 
-    return roles;
+    cache.set(wixFile, { completions, ts });
+
+    return completions;
   } catch (error) {
     cache.delete(wixFile);
   }
@@ -105,7 +103,9 @@ function getRoles(wixFile) {
 
 export default {
   provideCompletionItems(doc, position) {
-    if (!isFrontend(doc.uri.path)) return;
+    if (!isFrontend(doc.uri.path)) {
+      return;
+    }
 
     const prefix = doc.lineAt(position).text.substr(0, position.character);
 
@@ -120,16 +120,16 @@ export default {
       return;
     }
 
-    const roles = getRoles(wixFile);
+    const ts = getFileUpdatedDate(wixFile);
 
-    if (!Array.isArray(roles)) {
+    if (typeof ts !== 'number') {
       return;
     }
 
-    return createCompletionList(
-      roles.map(
-        (name) => ({ name, kind: K.Class }),
-      ),
-    );
+    const completions = getCompletions(wixFile, ts);
+
+    if (Array.isArray(completions)) {
+      return completions;
+    }
   },
 };
