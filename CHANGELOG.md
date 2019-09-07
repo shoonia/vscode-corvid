@@ -1,7 +1,7 @@
 # Change Log
 
 ## v0.8.3
-Added snippets and detail for wixSite, wixStores
+Added snippets and detail for wixSite, wixStores, wixPay, wixPaidPlans, wixMarketing
 
 ## v0.8.2
 Added snippets and detail for wixUsers
