@@ -1,8 +1,20 @@
 import { createCompletionList, isBackend, K } from './util';
 
 const list = createCompletionList([
-  { name: 'orderPlan', kind: K.Method },
-  { name: 'purchasePlan', kind: K.Method },
+  {
+    name: 'orderPlan',
+    kind: K.Method,
+    snippet: 'orderPlan(${1:planId})',
+    detail: 'function orderPlan(planId: string): Promise<OrderResult>',
+    docs: 'Orders a paid plan.',
+  },
+  {
+    name: 'purchasePlan',
+    kind: K.Method,
+    snippet: 'purchasePlan(${1:planId})',
+    detail: 'function purchasePlan(planId: string): Promise<PurchaseResult>',
+    docs: 'Orders and purchases a paid plan.',
+  },
 ]);
 
 export default {
