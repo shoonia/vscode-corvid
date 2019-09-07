@@ -1,7 +1,8 @@
 # Change Log
 
 ## v0.8.3
-Added snippets and detail for wixSite, wixStores, wixPay, wixPaidPlans, wixMarketing
+* Added snippets and detail for wixSite, wixStores, wixPay, wixPaidPlans, wixMarketing, wixBookings
+* Added autocomplete for `wixBilling` module.
 
 ## v0.8.2
 Added snippets and detail for wixUsers

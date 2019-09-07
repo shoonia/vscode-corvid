@@ -15,6 +15,7 @@ import wixStores from './wixStores';
 import wixBookings from './wixBookings';
 import wixPay from './wixPay';
 import wixPaidPlans from './wixPaidPlans';
+import wixBilling from './wixBilling';
 import roles from './roles';
 
 function register(provider, trigger = '.') {
@@ -42,4 +43,5 @@ export default [
   register(wixBookings),
   register(wixPay),
   register(wixPaidPlans),
+  register(wixBilling),
 ];
