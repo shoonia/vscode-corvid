@@ -1,11 +1,23 @@
 import { createCompletionList, isBackend, K } from './util';
 
 const listFronend = createCompletionList([
-  { name: 'startPayment', kind: K.Method },
+  {
+    name: 'startPayment',
+    kind: K.Method,
+    snippet: 'startPayment(${1:paymentId})',
+    detail: 'function startPayment(paymentId: string, [options: PaymentOptions]): Promise<PaymentResult>',
+    docs: 'Starts a payment.',
+  },
 ]);
 
 const listBackend = createCompletionList([
-  { name: 'createPayment', kind: K.Method },
+  {
+    name: 'createPayment',
+    kind: K.Method,
+    snippet: 'createPayment(${1:paymentInfo})',
+    detail: 'function createPayment(paymentInfo: PaymentInfo): Promise<Payment>',
+    docs: 'Creates a new payment.',
+  },
 ]);
 
 export default {
