@@ -107,10 +107,10 @@ export default {
       return;
     }
 
-    const prefix = doc.lineAt(position).text.substr(0, position.character);
+    const prefix = doc.lineAt(position).text.substr(0, position.character).trim();
 
-    if (prefix.startsWith('import')) {
-      return; // [HOT FIX]
+    if (/^[^$(a-z)+]\(['"]#[a-z\d]+['"]\)/i.test(prefix)) {
+      return;
     }
 
     // TODO: find better way
