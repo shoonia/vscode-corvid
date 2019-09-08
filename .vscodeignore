@@ -9,7 +9,6 @@ src/**
 
 yarn.lock
 rollup.config.js
-jsconfig.json
 
 *.map
 *.log*
