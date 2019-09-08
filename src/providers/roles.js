@@ -1,15 +1,12 @@
 import fs from 'fs';
+import { CompletionItemKind } from 'vscode';
 
-import {
-  K,
-  notHas,
-  isFrontend,
-  createCompletionList,
-} from '../util';
+import { notHas, isFrontend, createCompletionList } from './util';
 
+const { Class } = CompletionItemKind;
 const cache = new Map();
 
-function getFileUpdatedDate(path) {
+function getFileUpdatedTime(path) {
   try {
     const stats = fs.statSync(path);
     return stats.mtime.getTime();
@@ -18,40 +15,40 @@ function getFileUpdatedDate(path) {
   }
 }
 
-function readFile(name) {
+function readFile(path) {
   try {
-    return fs.readFileSync(name, 'utf8');
+    return fs.readFileSync(path, 'utf8');
   } catch (error) {
     return null;
   }
 }
 
-function parseBash64(b64) {
+function parseBash64(base64) {
   try {
-    return Buffer.from(b64, 'base64').toString('utf8');
+    return Buffer.from(base64, 'base64').toString('utf8');
   } catch (error) {
     return null;
   }
 }
 
-function parseJSON(text) {
+function parseJSON(string) {
   try {
-    return JSON.parse(text);
+    return JSON.parse(string);
   } catch (error) {
     return null;
   }
 }
 
-function getCompletions(wixFile, ts) {
-  if (cache.has(wixFile)) {
-    const data = cache.get(wixFile);
+function getCompletions(filePath, timestamp) {
+  if (cache.has(filePath)) {
+    const data = cache.get(filePath);
 
-    if (data.ts === ts) {
+    if (data.timestamp === timestamp) {
       return data.completions;
     }
   }
 
-  const file = readFile(wixFile);
+  const file = readFile(filePath);
 
   if (file === null) {
     return;
@@ -87,15 +84,15 @@ function getCompletions(wixFile, ts) {
       .values(obj.data.connections_data)
       .map((elem) => elem.items[0].role)
       .filter(Boolean)
-      .map((name) => ({ name, kind: K.Class }));
+      .map((name) => ({ name, kind: Class }));
 
     const completions = createCompletionList(roles);
 
-    cache.set(wixFile, { completions, ts });
+    cache.set(filePath, { completions, timestamp });
 
     return completions;
   } catch (error) {
-    cache.delete(wixFile);
+    cache.delete(filePath);
   }
 
   return null;
@@ -113,20 +110,19 @@ export default {
       return;
     }
 
-    // TODO: find better way
-    const wixFile = doc.fileName.slice(0, -2) + 'wix';
+    const filePath = doc.fileName.slice(0, -2).concat('wix');
 
-    if (!fs.existsSync(wixFile)) {
+    if (!fs.existsSync(filePath)) {
       return;
     }
 
-    const ts = getFileUpdatedDate(wixFile);
+    const timestamp = getFileUpdatedTime(filePath);
 
-    if (typeof ts !== 'number') {
+    if (typeof timestamp !== 'number') {
       return;
     }
 
-    const completions = getCompletions(wixFile, ts);
+    const completions = getCompletions(filePath, timestamp);
 
     if (Array.isArray(completions)) {
       return completions;
