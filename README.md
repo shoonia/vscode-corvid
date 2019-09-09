@@ -8,7 +8,7 @@ The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid)
 
 | Snippet | Content
 | ------- | --------------------------------------------- |
-| $→      | `$w('|')`
+| $→      | `$w('\|')`
 | iww→    | `import wixWindow from 'wix-window';`
 | iwd→    | `import wixData from 'wix-data';`
 | iwl→    | `import wixLocation from 'wix-location';`
