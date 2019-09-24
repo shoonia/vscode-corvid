@@ -2,7 +2,7 @@
   "name": "vscode-corvid",
   "displayName": "Corvid",
   "description": "The extension to work with corvid-cli. Highlighting .jsw, support jobs.config, autocomplete for selectors, snippets.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "alexanderz@wix.com",
   "publisher": "shoonia",
   "scripts": {
@@ -20,6 +20,25 @@
   ],
   "contributes": {
     "commands": [],
+    "configuration": [
+      {
+        "title": "Corvid",
+        "properties": {
+          "corvid.autocomplete.$w": {
+            "scope": "resource",
+            "type": "boolean",
+            "default": true,
+            "description": "Enable autocomplete for $w selectors"
+          },
+          "corvid.autocomplete.import": {
+            "scope": "resource",
+            "type": "boolean",
+            "default": true,
+            "description": "Enable autocomplete for import Wix modules"
+          }
+        }
+      }
+    ],
     "languages": [
       {
         "id": "javascript",
@@ -62,10 +81,10 @@
     "vsce": "^1.66.0"
   },
   "devDependencies": {
-    "eslint": "^6.3.0",
-    "rollup": "^1.20.3",
+    "eslint": "^6.4.0",
+    "rollup": "^1.21.4",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-terser": "^5.1.1"
+    "rollup-plugin-terser": "^5.1.2"
   },
   "repository": {
     "type": "git",
