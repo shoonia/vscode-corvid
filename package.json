@@ -44,7 +44,7 @@
     "snippets": [
       {
         "language": "javascript",
-        "path": "./snippets.json"
+        "path": "./snippets/imports.json"
       }
     ],
     "jsonValidation": [
