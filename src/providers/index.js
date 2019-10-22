@@ -15,7 +15,7 @@ function register(provider, trigger = '.') {
 }
 
 if (config.get('import')) {
-  providers.push(register(modules, '.'));
+  providers.push(register(modules, ' '));
 }
 
 if (config.get('$w')) {
