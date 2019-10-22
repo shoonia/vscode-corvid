@@ -106,7 +106,7 @@ export default {
 
     const prefix = doc.lineAt(position).text.substr(0, position.character).trim();
 
-    if (/^[^$(a-z)+]\(['"]#[a-z\d]+['"]\)/i.test(prefix)) {
+    if (/^[^$(a-z)+]\(['"`]#[a-z\d]+['"`]\)/i.test(prefix)) {
       return;
     }
 
