@@ -129,6 +129,19 @@ const listBackend = createCompletionList([
     snippet: 'wixUsers from \'wix-users-backend\';',
     docs: 'The wix-users-backend module contains functionality for working with your site\'s users from backend code.',
   },
+  {
+    name: 'import wixCaptcha from \'wix-captcha-backend\'',
+    kind: Module,
+    snippet: 'wixCaptcha from \'wix-captcha-backend\';',
+    docs: 'The wix-captcha-backend module contains functionality for working with the reCAPTCHA element from backend code.\n\nNote: This feature is not yet available to all users.',
+  },
+  {
+    name: 'import wixMediaManager from \'wix-media-backend\'',
+    kind: Module,
+    snippet: '{ mediaManager } from \'wix-media-backend\';',
+    detail: '{ mediaManager } from \'wix-media-backend\'',
+    docs: 'The wix-media-backend module contains functionality for working with media from backend code.',
+  },
 ]);
 
 export default {
