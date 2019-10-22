@@ -2,9 +2,10 @@
   "name": "vscode-corvid",
   "displayName": "Corvid",
   "description": "The extension to work with corvid-cli. Highlighting .jsw, support jobs.config, autocomplete for selectors, snippets.",
-  "version": "1.1.0",
-  "author": "alexanderz@wix.com",
+  "version": "1.2.0",
+  "author": "Alexander Zaytsev <alexanderz@wix.com>",
   "publisher": "shoonia",
+  "homepage": "https://marketplace.visualstudio.com/items?itemName=shoonia.vscode-corvid",
   "scripts": {
     "lint": "eslint . --fix",
     "start": "rollup --config rollup.config.js --watch --environment NODE_ENV:development",
@@ -81,14 +82,17 @@
     "vsce": "^1.66.0"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "rollup": "^1.21.4",
+    "eslint": "^6.5.1",
+    "rollup": "^1.25.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-terser": "^5.1.2"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/shoonia/vscode-corvid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shoonia/vscode-corvid/issues"
   },
   "keywords": [
     "wix",
