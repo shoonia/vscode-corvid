@@ -1,5 +1,5 @@
 import { CompletionItemKind } from 'vscode';
-import { isBackend, createCompletionList } from './util';
+import { isBackend, createCompletionList } from '../util';
 
 const { Module } = CompletionItemKind;
 
@@ -58,7 +58,7 @@ const listFronend = createCompletionList([
     docs: 'The wix-site module contains functionality for obtaining information about your site and its pages.',
   },
   {
-    name: 'wixStorage from \'wix-storage\'',
+    name: 'import wixStorage from \'wix-storage\'',
     kind: Module,
     snippet: '{ ${1|local,session,memory|} } from \'wix-storage\';',
     detail: '{ local } from \'wix-storage\'\n{ session } from \'wix-storage\'\n{ memory } from \'wix-storage\'',
@@ -77,7 +77,7 @@ const listFronend = createCompletionList([
     docs: 'The wix-users module contains functionality for working with your site\'s users from client-side code.',
   },
   {
-    name: 'wixWindow from \'wix-window\'',
+    name: 'import wixWindow from \'wix-window\'',
     kind: Module,
     snippet: 'wixWindow from \'wix-window\';',
     docs: 'The wix-window module contains functionality that pertains to the current browser window.',
@@ -133,7 +133,7 @@ const listBackend = createCompletionList([
     name: 'import wixCaptcha from \'wix-captcha-backend\'',
     kind: Module,
     snippet: 'wixCaptcha from \'wix-captcha-backend\';',
-    docs: 'The wix-captcha-backend module contains functionality for working with the reCAPTCHA element from backend code.\n\nNote: This feature is not yet available to all users.',
+    docs: 'The wix-captcha-backend module contains functionality for working with the reCAPTCHA element from backend code.\n\n*Note: This feature is not yet available to all users.*',
   },
   {
     name: 'import wixMediaManager from \'wix-media-backend\'',
@@ -144,7 +144,7 @@ const listBackend = createCompletionList([
   },
 ]);
 
-export default {
+export const modules = {
   provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
 

@@ -1,7 +1,7 @@
 import { languages, workspace } from 'vscode';
 
-import modules from './modules';
-import roles from './roles';
+import { modules } from './modules';
+import { roles } from './roles';
 
 const config = workspace.getConfiguration('corvid.autocomplete', null);
 const providers = [];

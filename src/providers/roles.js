@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { CompletionItemKind } from 'vscode';
 
-import { notHas, isFrontend, createCompletionList } from './util';
+import { notHas, isFrontend, createCompletionList } from '../util';
 
 const { Class } = CompletionItemKind;
 const cache = new Map();
@@ -79,13 +79,13 @@ function getCompletions(filePath, timestamp) {
     return;
   }
   try {
-    const roles = Object
+    const items = Object
       .values(obj.data.connections_data)
       .map((elem) => elem.items[0].role)
       .filter(Boolean)
       .map((name) => ({ name, kind: Class }));
 
-    const completions = createCompletionList(roles);
+    const completions = createCompletionList(items);
 
     cache.set(filePath, { completions, timestamp });
 
@@ -97,7 +97,7 @@ function getCompletions(filePath, timestamp) {
   return null;
 }
 
-export default {
+export const roles = {
   provideCompletionItems(doc, position) {
     if (!isFrontend(doc.uri.path)) {
       return;

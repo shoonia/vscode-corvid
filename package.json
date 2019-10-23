@@ -2,7 +2,7 @@
   "name": "vscode-corvid",
   "displayName": "Corvid",
   "description": "The extension to work with corvid-cli. Highlighting .jsw, support jobs.config, autocomplete for selectors, snippets.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Alexander Zaytsev <alexanderz@wix.com>",
   "publisher": "shoonia",
   "scripts": {
