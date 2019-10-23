@@ -1,5 +1,8 @@
 # Change Log
 
+## TODO:
+* Added license (MIT)
+
 ## v1.2.0
 * Added `wix-media-backend` & `wix-captcha-backend` to modules completion.
 * Fixed provider trigger for modules completion

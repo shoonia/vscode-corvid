@@ -5,7 +5,6 @@
   "version": "1.2.0",
   "author": "Alexander Zaytsev <alexanderz@wix.com>",
   "publisher": "shoonia",
-  "homepage": "https://marketplace.visualstudio.com/items?itemName=shoonia.vscode-corvid",
   "scripts": {
     "lint": "eslint . --fix",
     "start": "rollup --config rollup.config.js --watch --environment NODE_ENV:development",
@@ -29,7 +28,7 @@
             "scope": "resource",
             "type": "boolean",
             "default": true,
-            "description": "Enable autocomplete for $w selectors"
+            "description": "Enable autocomplete for $w() selectors"
           },
           "corvid.autocomplete.import": {
             "scope": "resource",

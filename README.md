@@ -2,13 +2,13 @@
 
 The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid). Highlighting `.jsw`, `.wix`, support `jobs.config`, autocomplete selectors, snippets.
 
-![](icons/exemple-1.png)
+![](./icons/exemple-1.png)
 
 ## Settings Options
 This extension contributes the following variables to the [settings](https://code.visualstudio.com/docs/getstarted/settings):
 
-* `corvid.autocomplete.$w` enable/disable Autocomplete for $w selectors.
-* `corvid.autocomplete.import` enable/disable Autocomplete for import Wix modules
+* `corvid.autocomplete.$w` - Enable/disable autocomplete for `$w()` selectors.
+* `corvid.autocomplete.import` - Enable/disable autocomplete for import Wix modules
 
 ## Snippets List
 
