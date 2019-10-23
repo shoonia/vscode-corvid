@@ -1,7 +1,8 @@
 # Change Log
 
-## TODO:
+## v1.3.0
 * Added license (MIT)
+* Fixed trigger for importing modules
 
 ## v1.2.0
 * Added `wix-media-backend` & `wix-captcha-backend` to modules completion.
