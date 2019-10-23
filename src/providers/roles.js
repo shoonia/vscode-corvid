@@ -8,8 +8,7 @@ const cache = new Map();
 
 function getFileUpdatedTime(path) {
   try {
-    const stats = fs.statSync(path);
-    return stats.mtime.getTime();
+    return fs.statSync(path).mtime.getTime();
   } catch (error) {
     return null;
   }

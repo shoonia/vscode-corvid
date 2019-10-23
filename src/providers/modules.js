@@ -146,7 +146,7 @@ const listBackend = createCompletionList([
 
 export default {
   provideCompletionItems(doc, position) {
-    const prefix = doc.lineAt(position).text.substr(0, position.character).trim();
+    const prefix = doc.lineAt(position).text.substr(0, position.character);
 
     if (/^import\s/.test(prefix)) {
       return isBackend(doc.uri.path) ? listBackend : listFronend;
