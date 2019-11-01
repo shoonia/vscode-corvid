@@ -22,7 +22,7 @@ function readFile(path) {
   }
 }
 
-function parseBash64(base64) {
+function parseBase64(base64) {
   try {
     return Buffer.from(base64, 'base64').toString('utf8');
   } catch (error) {
@@ -63,7 +63,7 @@ function getCompletions(filePath, timestamp) {
     return;
   }
 
-  const data = parseBash64(json.content.content);
+  const data = parseBase64(json.content.content);
 
   if (data === null) {
     return;
