@@ -2,11 +2,11 @@
   "name": "vscode-corvid",
   "displayName": "Corvid",
   "description": "The extension to work with corvid-cli. Highlighting .jsw, support jobs.config, autocomplete for selectors, snippets.",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "author": "Alexander Zaytsev <alexanderz@wix.com>",
   "publisher": "shoonia",
   "scripts": {
-    "lint": "eslint . --fix",
+    "lint": "eslint **/*.js --fix",
     "start": "rollup --config rollup.config.js --watch --environment NODE_ENV:development",
     "build": "rollup --config rollup.config.js --environment NODE_ENV:production",
     "dist": "yarn build && vsce publish"
@@ -78,11 +78,11 @@
   ],
   "engines": {
     "vscode": "^1.30.0",
-    "vsce": "^1.66.0"
+    "vsce": "^1.69.0"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "rollup": "^1.25.1",
+    "eslint": "^6.6.0",
+    "rollup": "^1.27.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-terser": "^5.1.2"
   },

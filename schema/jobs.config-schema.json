@@ -1,12 +1,12 @@
 {
   "type": "object",
   "title": "Scheduling Recurring Jobs",
-  "description": "The jobs.config file contains a JSON object which defines the scheduled jobs.",
+  "description": "The jobs.config file contains a JSON object which defines the scheduled jobs. The object consists of the properties listed below.",
   "properties": {
     "jobs": {
       "type": "array",
       "title": "jobs (Array)",
-      "description": "The key maps to an array of objects, each of which represents a scheduled job. You can configure up to 20 jobs.",
+      "description": "The jobs object contains one top-level key named \"jobs\". The key maps to an array of objects, each of which represents a scheduled job. You can configure up to 20 jobs.",
       "additionalItems": false,
       "minItems": 1,
       "maxItems": 20,
@@ -16,9 +16,10 @@
           "body": [
             {
               "functionLocation": "/$1",
-              "description": "$2",
+              "functionName": "$2.${3|js,jsw|}",
+              "description": "$4",
               "executionConfig": {
-                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$3"
+                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$5"
               }
             }
           ]
@@ -28,9 +29,10 @@
           "body": [
             {
               "functionLocation": "/$1",
-              "description": "$2",
+              "functionName": "$2.${3|js,jsw|}",
+              "description": "$4",
               "executionConfig": {
-                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$3",
+                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$5",
                 "dateInMonth": 1
               }
             }
@@ -41,10 +43,11 @@
           "body": [
             {
               "functionLocation": "/$1",
-              "description": "$2",
+              "functionName": "$2.${3|js,jsw|}",
+              "description": "$4",
               "executionConfig": {
-                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$3",
-                "dayOfWeek": "$CURRENT_DAY_NAME$4"
+                "time": "$CURRENT_HOUR:$CURRENT_MINUTE$5",
+                "dayOfWeek": "$CURRENT_DAY_NAME$6"
               }
             }
           ]
@@ -57,8 +60,19 @@
           "functionLocation": {
             "type": "string",
             "title": "functionLocation (String)",
-            "description": "The location of the backend function that will run at the scheduled time. The function can be any function in any backend .js file.",
+            "description": "The location of the file of the backend function that contains the function you want to run at the scheduled time. The function can be any function in any backend .js or .jsw file.",
             "default": "/"
+          },
+          "functionName": {
+            "type": "string",
+            "title": "functionName (String)",
+            "description": "Name of the function you want to run at the scheduled time.",
+            "defaultSnippets": [
+              {
+                "title": "Make sure you export the function that you want the job scheduler to call.",
+                "body": "$1.${2|js,jsw|}"
+              }
+            ]
           },
           "executionConfig": {
             "type": "object",
@@ -131,6 +145,7 @@
         },
         "required": [
           "functionLocation",
+          "functionName",
           "executionConfig"
         ]
       }

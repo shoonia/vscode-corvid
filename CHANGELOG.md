@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.4.0
+* Updated scheme for `jobs.config`
+
 ## v1.3.0
 * Added license (MIT)
 * Fixed trigger for importing modules
