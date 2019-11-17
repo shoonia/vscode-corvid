@@ -106,7 +106,7 @@
                 "type": "string",
                 "title": "time (String)",
                 "description": "The time of day the job runs. The time is specified as UTC time in HH:MM format.",
-                "pattern": "[0-2][0-9]:[0-5][0-9]",
+                "pattern": "^[0-2][0-9]:[0-5][0-9]$",
                 "default": "00:00"
               },
               "dayOfWeek": {
