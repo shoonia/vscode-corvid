@@ -6,7 +6,7 @@ import { roles } from './roles';
 const config = workspace.getConfiguration('corvid.autocomplete', null);
 const providers = [];
 
-function register(provider, trigger = '.') {
+function register(provider, trigger) {
   return languages.registerCompletionItemProvider(
     { scheme: 'file', language: 'javascript' },
     provider,

@@ -16,7 +16,7 @@ function getFileUpdatedTime(path) {
 
 function readFile(path) {
   try {
-    return fs.readFileSync(path, 'utf8');
+    return fs.readFileSync(path);
   } catch (error) {
     return null;
   }
@@ -24,15 +24,15 @@ function readFile(path) {
 
 function parseBase64(base64) {
   try {
-    return Buffer.from(base64, 'base64').toString('utf8');
+    return Buffer.from(base64, 'base64');
   } catch (error) {
     return null;
   }
 }
 
-function parseJSON(string) {
+function parseJSON(data) {
   try {
-    return JSON.parse(string);
+    return JSON.parse(data);
   } catch (error) {
     return null;
   }
@@ -91,7 +91,7 @@ function getCompletions(filePath, timestamp) {
 
     return completions;
   } catch (error) {
-    cache.delete(filePath);
+    cache.clear();
   }
 
   return null;
