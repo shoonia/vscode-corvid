@@ -23,9 +23,9 @@ function getCompletions(filePath, timestamp) {
     }
   }
   try {
-    const file = fs.readFileSync(filePath);
+    const file = fs.readFileSync(filePath, 'utf8');
     const { content } = JSON.parse(file);
-    const json = Buffer.from(content.content, 'base64');
+    const json = Buffer.from(content.content, 'base64').toString('utf8');
     const { data } = JSON.parse(json);
 
     const items = Object
