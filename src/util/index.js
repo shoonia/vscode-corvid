@@ -3,9 +3,7 @@ import vscode from 'vscode';
 
 const IS_BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
 const IS_FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
-const hasProperty = Object.prototype.hasOwnProperty;
 
-export const notHas = (obj, key) => obj == null || !hasProperty.call(obj, key);
 export const isBackend = (path) => IS_BACKEND.test(path);
 export const isFrontend = (path) => IS_FRONTEND.test(path);
 

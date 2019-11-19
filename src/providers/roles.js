@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { CompletionItemKind } from 'vscode';
 
-import { notHas, isFrontend, createCompletionList } from '../util';
+import { isFrontend, createCompletionList } from '../util';
 
 const { Class } = CompletionItemKind;
 const cache = new Map();
@@ -9,30 +9,6 @@ const cache = new Map();
 function getFileUpdatedTime(path) {
   try {
     return fs.statSync(path).mtime.getTime();
-  } catch (error) {
-    return null;
-  }
-}
-
-function readFile(path) {
-  try {
-    return fs.readFileSync(path);
-  } catch (error) {
-    return null;
-  }
-}
-
-function parseBase64(base64) {
-  try {
-    return Buffer.from(base64, 'base64');
-  } catch (error) {
-    return null;
-  }
-}
-
-function parseJSON(data) {
-  try {
-    return JSON.parse(data);
   } catch (error) {
     return null;
   }
@@ -46,41 +22,14 @@ function getCompletions(filePath, timestamp) {
       return data.completions;
     }
   }
-
-  const file = readFile(filePath);
-
-  if (file === null) {
-    return;
-  }
-
-  const json = parseJSON(file);
-
-  if (
-    json === null ||
-    notHas(json, 'content') ||
-    notHas(json.content, 'content')
-  ) {
-    return;
-  }
-
-  const data = parseBase64(json.content.content);
-
-  if (data === null) {
-    return;
-  }
-
-  const obj = parseJSON(data);
-
-  if (
-    obj === null ||
-    notHas(obj, 'data') ||
-    notHas(obj.data, 'connections_data')
-  ) {
-    return;
-  }
   try {
+    const file = fs.readFileSync(filePath);
+    const { content } = JSON.parse(file);
+    const json = Buffer.from(content.content, 'base64');
+    const { data } = JSON.parse(json);
+
     const items = Object
-      .values(obj.data.connections_data)
+      .values(data.connections_data)
       .map((elem) => elem.items[0].role)
       .filter(Boolean)
       .map((name) => ({ name, kind: Class }));
