@@ -28,11 +28,15 @@ function getCompletions(filePath, timestamp) {
     const json = Buffer.from(content.content, 'base64').toString('utf8');
     const { data } = JSON.parse(json);
 
-    const items = Object
-      .values(data.connections_data)
-      .map((elem) => elem.items[0].role)
-      .filter(Boolean)
-      .map((name) => ({ name, kind: Class }));
+    const items = Object.values(data.connections_data)
+      .map((element) => {
+        const [item] = element.items;
+
+        return {
+          kind: Class,
+          name: item.role,
+        };
+      });
 
     const completions = createCompletionList(items);
 

@@ -19,7 +19,7 @@ This extension contributes the following variables to the [settings](https://cod
 | iwd→    | `import wixData from 'wix-data';`
 | iwl→    | `import wixLocation from 'wix-location';`
 | iwu→    | `import wixUsers from 'wix-users';`
-| iwub→   | `import wixUsers from 'wix-users-backend';"`
+| iwub→   | `import wixUsers from 'wix-users-backend';`
 | iwf→    | `import { fetch, ... } from 'wix-fetch';`
 | iws→    | `import { local, ... } from 'wix-storage';`
 | ihf→    | `import { ok, ... } from 'wix-http-functions';`
