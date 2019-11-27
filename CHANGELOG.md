@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.5.0
+* Added `wix-seo` module to import completion.
+
 ## v1.4.0
 * Updated scheme for `jobs.config`
 
@@ -8,7 +11,7 @@
 * Fixed trigger for importing modules
 
 ## v1.2.0
-* Added `wix-media-backend` & `wix-captcha-backend` to modules completion.
+* Added `wix-media-backend` & `wix-captcha-backend` modules to import completion.
 * Fixed provider trigger for modules completion
 * Fixed using string literals in `$w()` selectors
 

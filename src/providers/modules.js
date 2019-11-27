@@ -82,6 +82,12 @@ const listFronend = createCompletionList([
     snippet: 'wixWindow from \'wix-window\';',
     docs: 'The wix-window module contains functionality that pertains to the current browser window.',
   },
+  {
+    name: 'import wixSeo from \'wix-seo\'',
+    kind: Module,
+    snippet: 'wixSeo from \'wix-seo\';',
+    docs: 'The wix-seo module contains functionality for working with your site\'s SEO from client-side code.',
+  },
 ]);
 
 const listBackend = createCompletionList([

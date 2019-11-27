@@ -13,6 +13,7 @@
   },
   "rules": {
     "linebreak-style": "off",
+    "no-trailing-spaces": "error",
     "comma-dangle": [
       "error",
       "always-multiline"
