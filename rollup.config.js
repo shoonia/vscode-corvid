@@ -35,6 +35,7 @@ if (process.env.NODE_ENV === 'production') {
         drop_console: true,
         passes: 3,
         unsafe_methods: true,
+        toplevel: true,
       },
       output: {
         ecma: 8,

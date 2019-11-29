@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { statSync, readFileSync, existsSync } from 'fs';
 import { CompletionItemKind } from 'vscode';
 
 import { isFrontend, createCompletionList } from '../util';
@@ -8,7 +8,7 @@ const cache = new Map();
 
 function getFileUpdatedTime(path) {
   try {
-    return fs.statSync(path).mtime.getTime();
+    return statSync(path).mtime.getTime();
   } catch (error) {
     return null;
   }
@@ -23,7 +23,7 @@ function getCompletions(filePath, timestamp) {
     }
   }
   try {
-    const file = fs.readFileSync(filePath, 'utf8');
+    const file = readFileSync(filePath, 'utf8');
     const { content } = JSON.parse(file);
     const json = Buffer.from(content.content, 'base64').toString('utf8');
     const { data } = JSON.parse(json);
@@ -64,7 +64,7 @@ export const roles = {
 
     const filePath = doc.fileName.slice(0, -2).concat('wix');
 
-    if (!fs.existsSync(filePath)) {
+    if (!existsSync(filePath)) {
       return;
     }
 

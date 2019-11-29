@@ -1,5 +1,5 @@
-import providers from './providers';
+import { getProviders } from './providers';
 
 export function activate(context) {
-  context.subscriptions.push(providers);
+  context.subscriptions.push(getProviders());
 }
