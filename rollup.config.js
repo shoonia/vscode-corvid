@@ -24,6 +24,9 @@ const config = {
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     terser({
+      ecma: 8,
+      module: true,
+      toplevel: true,
       parse: {
         ecma: 8,
       },
@@ -35,6 +38,7 @@ if (process.env.NODE_ENV === 'production') {
         drop_console: true,
         passes: 3,
         unsafe_methods: true,
+        module: true,
         toplevel: true,
       },
       output: {
