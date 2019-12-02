@@ -1,8 +1,5 @@
 # Change Log
 
-## v1.6.0
-* Added default editor settings.
-
 ## v1.5.0
 * Added `wix-seo` module to import completion.
 

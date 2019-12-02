@@ -2,7 +2,7 @@
   "name": "vscode-corvid",
   "displayName": "Corvid",
   "description": "The extension to work with corvid-cli. Highlighting .jsw, support jobs.config, autocomplete for selectors, snippets.",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "publisher": "shoonia",
   "scripts": {
     "lint": "eslint **/*.js --fix",
@@ -69,19 +69,7 @@
         "fileMatch": "jobs.config",
         "url": "./schema/jobs.config-schema.json"
       }
-    ],
-    "configurationDefaults": {
-      "[javascript]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": false,
-        "editor.detectIndentation": false
-      },
-      "[jsonc]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": false,
-        "editor.detectIndentation": false
-      }
-    }
+    ]
   },
   "categories": [
     "Other"
