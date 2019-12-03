@@ -148,6 +148,12 @@ const listBackend = createCompletionList([
     detail: '{ mediaManager } from \'wix-media-backend\'',
     docs: 'The wix-media-backend module contains functionality for working with media from backend code.',
   },
+  {
+    name: 'import wixRouter from \'wix-router\'',
+    kind: Module,
+    snippet: '{ ${1|ok,notFound,next,redirect,forbidden,sendStatus|} } from \'wix-router\';',
+    docs: 'This module contains the APIs for code routers and data binding router hooks.',
+  },
 ]);
 
 export const modules = {

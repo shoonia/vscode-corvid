@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.7.0
+* Added `wix-router` module to import completion.
+
 ## v1.5.0
 * Added `wix-seo` module to import completion.
 
