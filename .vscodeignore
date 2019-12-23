@@ -6,6 +6,7 @@ src/**
 .eslintrc
 .eslintignore
 .env
+.npmrc
 
 yarn.lock
 rollup.config.js
