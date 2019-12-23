@@ -40,6 +40,9 @@ if (process.env.NODE_ENV === 'production') {
         unsafe_methods: true,
         module: true,
         toplevel: true,
+        pure_getters: true,
+        unsafe: true,
+        unsafe_math: true,
       },
       output: {
         ecma: 8,

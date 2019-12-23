@@ -88,6 +88,12 @@ const listFronend = createCompletionList([
     snippet: 'wixSeo from \'wix-seo\';',
     docs: 'The wix-seo module contains functionality for working with your site\'s SEO from client-side code.',
   },
+  {
+    name: 'import wixEvents from \'wix-events\'',
+    kind: Module,
+    snippet: 'wixEvents from \'wix-events\';',
+    docs: 'The wix-events module contains functionality for working with Wix Events from client-side code.',
+  },
 ]);
 
 const listBackend = createCompletionList([

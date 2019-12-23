@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.8.0
+* Added `wix-events` module to import completion.
+
 ## v1.7.0
 * Added `wix-router` module to import completion.
 
