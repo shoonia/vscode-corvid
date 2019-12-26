@@ -1,7 +1,8 @@
 # Change Log
 
 ## v1.9.0
-* Added `wix-chat-backend` module to import completion.
+* Added `wix-chat-backend` and `wix-http-functions` modules to import completion.
+* Added links to the documentation.
 
 ## v1.8.0
 * Added `wix-events` module to import completion.
