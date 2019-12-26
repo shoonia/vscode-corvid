@@ -160,6 +160,13 @@ const listBackend = createCompletionList([
     snippet: '{ ${1|ok,notFound,next,redirect,forbidden,sendStatus|} } from \'wix-router\';',
     docs: 'This module contains the APIs for code routers and data binding router hooks.',
   },
+  {
+    name: 'import wixChat from \'wix-chat-backend\'',
+    kind: Module,
+    snippet: 'wixChat from \'wix-chat-backend\';',
+    detail: 'The wix-chat-backend module contains functionality for working with the Wix Chat application from backend code.',
+    docs: '[wix-chat-backend](https://www.wix.com/corvid/reference/wix-chat-backend.html)',
+  },
 ]);
 
 export const modules = {

@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.9.0
+* Added `wix-chat-backend` module to import completion.
+
 ## v1.8.0
 * Added `wix-events` module to import completion.
 
