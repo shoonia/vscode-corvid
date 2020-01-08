@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.10.0
+* Added `wix-search` module to import completion.
+
 ## v1.9.0
 * Added `wix-chat-backend` and `wix-http-functions` modules to import completion.
 * Added links to the documentation.

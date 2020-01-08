@@ -110,6 +110,13 @@ const listFronend = createCompletionList([
     docs: 'The [wix-events](https://www.wix.com/corvid/reference/wix-events.html)'
       + ' module contains functionality for working with Wix Events from client-side code.',
   },
+  {
+    name: 'import wixSearch from \'wix-search\'',
+    kind: Module,
+    snippet: 'wixSearch from \'wix-search\';',
+    docs: 'The [wix-search](https://www.wix.com/corvid/reference/wix-search.html)'
+      + ' module contains functionality for searching a site.',
+  },
 ]);
 
 const listBackend = createCompletionList([
