@@ -1,5 +1,8 @@
 # Corvid
 
+[![extension version](https://vsmarketplacebadge.apphb.com/version/shoonia.vscode-corvid.svg)](https://marketplace.visualstudio.com/items?itemName=shoonia.vscode-corvid)
+
+
 The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid). Highlighting `.jsw`, `.wix`, support `jobs.config`, autocomplete selectors, snippets.
 
 ![vscode-corvid](https://raw.githubusercontent.com/shoonia/vscode-corvid/prod/icons/exemple-1.png)
