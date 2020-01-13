@@ -6,15 +6,15 @@ import { isFrontend, createCompletionList } from '../util';
 const { Class } = CompletionItemKind;
 const cache = new Map();
 
-function getFileUpdatedTime(path) {
+const getFileUpdatedTime = (path) => {
   try {
     return statSync(path).mtime.getTime();
   } catch (error) {
     return null;
   }
-}
+};
 
-function getCompletions(filePath, timestamp) {
+const getCompletions = (filePath, timestamp) => {
   if (cache.has(filePath)) {
     const data = cache.get(filePath);
 
@@ -48,7 +48,7 @@ function getCompletions(filePath, timestamp) {
   }
 
   return null;
-}
+};
 
 export const roles = {
   provideCompletionItems(doc, position) {

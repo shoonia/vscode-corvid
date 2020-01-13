@@ -5,15 +5,15 @@ import { roles } from './roles';
 
 const config = workspace.getConfiguration('corvid.autocomplete', null);
 
-function register(provider, trigger) {
+const register = (provider, trigger) => {
   return languages.registerCompletionItemProvider(
     { scheme: 'file', language: 'javascript' },
     provider,
     trigger,
   );
-}
+};
 
-export function getProviders() {
+export const getProviders = () => {
   const providers = [];
 
   if (config.get('import')) {
@@ -24,4 +24,4 @@ export function getProviders() {
   }
 
   return providers;
-}
+};

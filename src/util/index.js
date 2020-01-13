@@ -11,7 +11,7 @@ const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
 export const isBackend = (path) => BACKEND.test(path);
 export const isFrontend = (path) => FRONTEND.test(path);
 
-export function createCompletionList(list) {
+export const createCompletionList = (list) => {
   return list.map((item) => {
     const completion = new CompletionItem(item.name, item.kind);
 
@@ -29,4 +29,4 @@ export function createCompletionList(list) {
     // }
     return completion;
   });
-}
+};
