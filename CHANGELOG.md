@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.11.0
+* Extended `jobs.config` schema. Added `cronExpression` property to `executionConfig`.
+
 ## v1.10.0
 * Added `wix-search` module to import completion.
 

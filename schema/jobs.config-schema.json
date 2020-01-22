@@ -51,6 +51,19 @@
               }
             }
           ]
+        },
+        {
+          "label": "Every hour",
+          "body": [
+            {
+              "functionLocation": "/$1",
+              "functionName": "$2.${3|js,jsw|}",
+              "description": "$4",
+              "executionConfig": {
+                "cronExpression": "0 * * * *$5"
+              }
+            }
+          ]
         }
       ],
       "items": {
@@ -99,6 +112,12 @@
                   "time": "$CURRENT_HOUR:$CURRENT_MINUTE$1",
                   "dateInMonth": 1
                 }
+              },
+              {
+                "label": "Every hour",
+                "body": {
+                  "cronExpression": "0 * * * *$1"
+                }
               }
             ],
             "properties": {
@@ -131,11 +150,15 @@
                 "default": 1,
                 "minimum": 1,
                 "maximum": 31
+              },
+              "cronExpression": {
+                "type": "string",
+                "title": "cronExpression (String)",
+                "description": "A valid cron expression.\n\nWhen using a cron expression, you can schedule your job to run at intervals as short as one hour apart, but not shorter. If you define your job to run more frequently, the job will be ignored.",
+                "pattern": "(\\*|[0-5]?[0-9]|\\*\/[0-9]+)\\s+(\\*|1?[0-9]|2[0-3]|\\*\/[0-9]+)\\s+(\\*|[1-2]?[0-9]|3[0-1]|\\*\/[0-9]+)\\s+(\\*|[0-9]|1[0-2]|\\*\/[0-9]+|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\\s+(\\*\/[0-9]+|\\*|[0-7]|sun|mon|tue|wed|thu|fri|sat)\\s*(\\*\/[0-9]+|\\*|[0-9]+)?",
+                "default": "0 * * * *"
               }
-            },
-            "required": [
-              "time"
-            ]
+            }
           },
           "description": {
             "type": "string",
