@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.*
+* Added autocomplete for external packages
+
 ## v1.11.0
 * Extended `jobs.config` schema. Added `cronExpression` property to `executionConfig`.
 * Fixed `time` pattern for `jobs.config` schema.

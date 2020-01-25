@@ -30,3 +30,8 @@ export const createCompletionList = (list) => {
     return completion;
   });
 };
+
+export const createModuleName = (str) => str.replace(
+  /([\W][\w]?)/g,
+  (s) => s.toUpperCase().replace(/\W/, ''),
+);
