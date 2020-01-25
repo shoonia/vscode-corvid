@@ -1,5 +1,6 @@
-import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 
 const config = {
   input: './src/extension.js',
@@ -15,6 +16,7 @@ const config = {
   ],
   plugins: [
     commonjs(),
+    json(),
   ],
   watch: {
     include: './src/**',
