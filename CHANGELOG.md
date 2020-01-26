@@ -1,6 +1,6 @@
 # Change Log
 
-## next
+## v1.12.0
 * Added autocomplete for external packages
 * Fixed mutually exclusive properties `time` and `cronExpression` in `jobs.config`
 * Fixed `jobs.config` schema, the top object shouldn't have additional properties

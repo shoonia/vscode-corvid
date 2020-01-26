@@ -8,8 +8,10 @@ tests/**
 .eslintignore
 .env
 .npmrc
+.DS_Store
 
 yarn.lock
+package-lock.json
 rollup.config.js
 
 *.map

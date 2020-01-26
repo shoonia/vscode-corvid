@@ -69,11 +69,6 @@ export const roles = {
     }
 
     const timestamp = getFileUpdatedTime(filePath);
-
-    if (typeof timestamp !== 'number') {
-      return;
-    }
-
     const completions = getCompletions(filePath, timestamp);
 
     if (Array.isArray(completions)) {
