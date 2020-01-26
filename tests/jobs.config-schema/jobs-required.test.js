@@ -5,7 +5,7 @@ describe('errors', () => {
   it('should NOT have fewer than 1 items', () => {
     shouldBeError({
       "jobs": []
-    });
+    }, /should NOT have fewer than 1 items/);
   });
 
   it('should NOT have more than 20 items', () => {
@@ -19,7 +19,7 @@ describe('errors', () => {
           }
         };
       }),
-    });
+    }, /should NOT have more than 20 items/);
   });
 
   it('should have required property `functionLocation`', () => {
@@ -32,7 +32,7 @@ describe('errors', () => {
           }
         }
       ]
-    });
+    }, /should have required property 'functionLocation'/);
   });
 
   it('should have required property `functionName`', () => {
@@ -45,7 +45,7 @@ describe('errors', () => {
           }
         }
       ]
-    });
+    }, /should have required property 'functionName'/);
   });
 
   it('should have required property `executionConfig`', () => {
@@ -56,6 +56,6 @@ describe('errors', () => {
           "functionName": "function_name",
         }
       ]
-    });
+    }, /should have required property 'executionConfig'/);
   });
 });

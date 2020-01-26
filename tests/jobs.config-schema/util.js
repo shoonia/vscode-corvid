@@ -6,7 +6,7 @@ expect.extend(matchers);
 module.exports = {
   validation: (config) => expect(config).toMatchSchema(schema),
 
-  shouldBeError: (invalidData) => expect(() => {
+  shouldBeError: (invalidData, message) => expect(() => {
     expect(invalidData).toMatchSchema(schema);
-  }).toThrowError(),
+  }).toThrowError(message),
 };
