@@ -58,4 +58,24 @@ describe('errors', () => {
       ]
     }, /should have required property 'executionConfig'/);
   });
+
+  it('should have required property `jobs`', () => {
+    shouldBeError({}, /should have required property 'jobs'/);
+  });
+
+  it('should NOT have additional properties', () => {
+    shouldBeError({
+      "x": "y",
+      "jobs": [
+        {
+          "functionLocation": "/x.js",
+          "functionName": "y",
+          "description": "d",
+          "executionConfig": {
+            "time": "00:00"
+          }
+        }
+      ]
+    }, /should NOT have additional properties, but found 'x'/);
+  });
 });

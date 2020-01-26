@@ -2,6 +2,10 @@
   "type": "object",
   "title": "Scheduling Recurring Jobs",
   "description": "The jobs.config file contains a JSON object which defines the scheduled jobs. The object consists of the properties listed below.",
+  "additionalProperties": false,
+  "required": [
+    "jobs"
+  ],
   "properties": {
     "jobs": {
       "type": "array",
@@ -185,8 +189,5 @@
         ]
       }
     }
-  },
-  "required": [
-    "jobs"
-  ]
+  }
 }
