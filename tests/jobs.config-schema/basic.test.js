@@ -51,4 +51,17 @@ describe('jobs.config schema', () => {
       }
     ]
   }));
+
+  it('property description', () => validation({
+    "jobs": [
+      {
+        "functionLocation": "/x.js",
+        "functionName": "y",
+        "description": "x",
+        "executionConfig": {
+          "time": "00:00"
+        }
+      }
+    ]
+  }));
 });

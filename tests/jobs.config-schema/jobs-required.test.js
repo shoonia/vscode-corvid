@@ -78,4 +78,21 @@ describe('errors', () => {
       ]
     }, /should NOT have additional properties, but found 'x'/);
   });
+
+  it('jobs should NOT have additional properties', () => {
+    shouldBeError({
+      "jobs": [
+        {
+          "functionLocation": "/z.jsw",
+          "functionName": "a",
+          "executionConfig": {
+            "cronExpression": "0 * * * *"
+          }
+        },
+        {
+          "abc": 123
+        }
+      ]
+    }, /should NOT have additional properties, but found 'abc'/);
+  });
 });
