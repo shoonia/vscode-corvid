@@ -2,6 +2,7 @@
 
 ## v1.*
 * Added autocomplete for external packages
+* Fixed mutually exclusive properties `time` and `cronExpression` in jobs.config
 
 ## v1.11.0
 * Extended `jobs.config` schema. Added `cronExpression` property to `executionConfig`.
