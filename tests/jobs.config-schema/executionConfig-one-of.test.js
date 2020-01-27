@@ -172,4 +172,17 @@ describe('executionConfig required', () => {
       ]
     });
   });
+
+  it('should not be empty', () => {
+    shouldBeError({
+      "jobs": [
+        {
+          "functionLocation": "/",
+          "functionName": ".js",
+          "description": "",
+          "executionConfig": {}
+        }
+      ]
+    });
+  });
 });
