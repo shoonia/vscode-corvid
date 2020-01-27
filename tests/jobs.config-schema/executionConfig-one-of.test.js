@@ -35,7 +35,7 @@ describe('executionConfig required', () => {
     });
   });
 
-  it('should be have `time` with `dayOfWeek`', () => {
+  it('should not be only `dayOfWeek`', () => {
     shouldBeError({
       "jobs": [
         {
@@ -49,7 +49,7 @@ describe('executionConfig required', () => {
     });
   });
 
-  it('should be have `time` with `dateInMonth`', () => {
+  it('should not be only `dateInMonth`', () => {
     shouldBeError({
       "jobs": [
         {
@@ -57,6 +57,21 @@ describe('executionConfig required', () => {
           "functionName": ".js",
           "executionConfig": {
             "dateInMonth": 1
+          }
+        }
+      ]
+    });
+  });
+
+  it('should not be `dateInMonth` with `dayOfWeek`', () => {
+    shouldBeError({
+      "jobs": [
+        {
+          "functionLocation": "/",
+          "functionName": ".js",
+          "executionConfig": {
+            "dateInMonth": 1,
+            "dayOfWeek": "Monday"
           }
         }
       ]
@@ -109,7 +124,39 @@ describe('executionConfig required', () => {
     });
   });
 
-  it('should not be all', () => {
+  it('should not be `cronExpression` with `time` and `dayOfWeek`', () => {
+    shouldBeError({
+      "jobs": [
+        {
+          "functionLocation": "/",
+          "functionName": ".js",
+          "executionConfig": {
+            "cronExpression": "0 * * * *",
+            "time": "00:00",
+            "dayOfWeek": "Monday"
+          }
+        }
+      ]
+    });
+  });
+
+  it('should not be `cronExpression` with `time` and `dateInMonth`', () => {
+    shouldBeError({
+      "jobs": [
+        {
+          "functionLocation": "/",
+          "functionName": ".js",
+          "executionConfig": {
+            "cronExpression": "0 * * * *",
+            "time": "00:00",
+            "dateInMonth": 1
+          }
+        }
+      ]
+    });
+  });
+
+  it('should not be together', () => {
     shouldBeError({
       "jobs": [
         {
