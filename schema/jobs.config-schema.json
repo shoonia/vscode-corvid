@@ -3,45 +3,6 @@
   "title": "Scheduling Recurring Jobs",
   "description": "The jobs.config file contains a JSON object which defines the scheduled jobs. The object consists of the properties listed below.",
   "additionalProperties": false,
-  "definitions": {
-    "time": {
-      "type": "string",
-      "title": "time (String)",
-      "description": "The time of day the job runs. The time is specified as UTC time in HH:MM format.",
-      "pattern": "^([01]\\d|2[0-3]):?([0-5]\\d)$",
-      "default": "00:00"
-    },
-    "dayOfWeek": {
-      "type": "string",
-      "title": "dayOfWeek (String)",
-      "description": "The day of the week the job runs on. For daily or monthly jobs, omit the dayOfWeek property.",
-      "default": "Monday",
-      "enum": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ]
-    },
-    "dateInMonth": {
-      "type": "integer",
-      "title": "dateInMonth (Number)",
-      "description": "The day of the month the job runs on. A number between 1 and 31.",
-      "default": 1,
-      "minimum": 1,
-      "maximum": 31
-    },
-    "cronExpression": {
-      "type": "string",
-      "title": "cronExpression (String)",
-      "description": "A valid cron expression.\n\nWhen using a cron expression, you can schedule your job to run at intervals as short as one hour apart, but not shorter. If you define your job to run more frequently, the job will be ignored.",
-      "pattern": "(\\*|[0-5]?[0-9]|\\*\/[0-9]+)\\s+(\\*|1?[0-9]|2[0-3]|\\*\/[0-9]+)\\s+(\\*|[1-2]?[0-9]|3[0-1]|\\*\/[0-9]+)\\s+(\\*|[0-9]|1[0-2]|\\*\/[0-9]+|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\\s+(\\*\/[0-9]+|\\*|[0-7]|sun|mon|tue|wed|thu|fri|sat)\\s*(\\*\/[0-9]+|\\*|[0-9]+)?",
-      "default": "0 * * * *"
-    }
-  },
   "required": [
     "jobs"
   ],
@@ -135,6 +96,11 @@
               }
             ]
           },
+          "description": {
+            "type": "string",
+            "title": "description (String)",
+            "description": "A description of the job."
+          },
           "executionConfig": {
             "type": "object",
             "title": "executionConfig (Object)",
@@ -170,35 +136,95 @@
             ],
             "properties": {
               "time": {
-                "$ref": "#/definitions/time"
+                "type": "string",
+                "title": "time (String)",
+                "description": "The time of day the job runs. The time is specified as UTC time in HH:MM format.",
+                "pattern": "^([01]\\d|2[0-3]):?([0-5]\\d)$",
+                "default": "00:00"
               },
               "dayOfWeek": {
-                "$ref": "#/definitions/dayOfWeek"
+                "type": "string",
+                "title": "dayOfWeek (String)",
+                "description": "The day of the week the job runs on. For daily or monthly jobs, omit the dayOfWeek property.",
+                "default": "Monday",
+                "enum": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ]
               },
               "dateInMonth": {
-                "$ref": "#/definitions/dateInMonth"
+                "type": "integer",
+                "title": "dateInMonth (Number)",
+                "description": "The day of the month the job runs on. A number between 1 and 31.",
+                "default": 1,
+                "minimum": 1,
+                "maximum": 31
               },
               "cronExpression": {
-                "$ref": "#/definitions/cronExpression"
+                "type": "string",
+                "title": "cronExpression (String)",
+                "description": "A valid cron expression.\n\nWhen using a cron expression, you can schedule your job to run at intervals as short as one hour apart, but not shorter. If you define your job to run more frequently, the job will be ignored.",
+                "pattern": "(\\*|[0-5]?[0-9]|\\*\/[0-9]+)\\s+(\\*|1?[0-9]|2[0-3]|\\*\/[0-9]+)\\s+(\\*|[1-2]?[0-9]|3[0-1]|\\*\/[0-9]+)\\s+(\\*|[0-9]|1[0-2]|\\*\/[0-9]+|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\\s+(\\*\/[0-9]+|\\*|[0-7]|sun|mon|tue|wed|thu|fri|sat)\\s*(\\*\/[0-9]+|\\*|[0-9]+)?",
+                "default": "0 * * * *"
               }
             },
             "oneOf": [
               {
                 "required": [
                   "cronExpression"
-                ]
+                ],
+                "not": {
+                  "required": [
+                    "time"
+                  ]
+                }
               },
               {
                 "required": [
                   "time"
-                ]
+                ],
+                "not": {
+                  "required": [
+                    "cronExpression"
+                  ]
+                }
               }
-            ]
-          },
-          "description": {
-            "type": "string",
-            "title": "description (String)",
-            "description": "A description of the job."
+            ],
+            "dependencies": {
+              "dayOfWeek": {
+                "required": [
+                  "time"
+                ],
+                "not": {
+                  "required": [
+                    "dateInMonth"
+                  ]
+                }
+              },
+              "dateInMonth": {
+                "required": [
+                  "time"
+                ],
+                "not": {
+                  "required": [
+                    "dayOfWeek"
+                  ]
+                }
+              },
+              "cronExpression": {
+                "not": {
+                  "required": [
+                    "dayOfWeek",
+                    "dateInMonth"
+                  ]
+                }
+              }
+            }
           }
         }
       }
