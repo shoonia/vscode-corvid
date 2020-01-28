@@ -2,13 +2,14 @@ import { join } from 'path';
 import { existsSync } from 'fs';
 import { workspace } from 'vscode';
 
-import frontend from './frontend.json';
-import backend from './backend.json';
+import backend from './_backend.json';
+import frontend from './_frontend.json';
+import site from './_site.json';
 import {
   isBackend,
   createCompletionList,
   createModuleName,
-} from '../util';
+} from '../../util';
 
 const corvidPackage = (() => {
   try {
@@ -37,8 +38,9 @@ const corvidPackage = (() => {
   return [];
 })();
 
-const frontendList = createCompletionList(frontend.concat(corvidPackage));
-const backendList = createCompletionList(backend.concat(corvidPackage));
+const common = createCompletionList(site.concat(corvidPackage));
+const frontendList = createCompletionList(frontend).concat(common);
+const backendList = createCompletionList(backend).concat(common);
 
 export const modules = {
   provideCompletionItems(doc, position) {

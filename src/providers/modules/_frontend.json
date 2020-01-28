@@ -1,17 +1,5 @@
 [
   {
-    "name": "import wixBookings from 'wix-bookings'",
-    "kind": 8,
-    "snippet": "wixBookings from 'wix-bookings';",
-    "docs": "The [wix-bookings](https://www.wix.com/corvid/reference/wix-bookings.html) module contains functionality for working with bookings from client-side code."
-  },
-  {
-    "name": "import wixCRM from 'wix-crm'",
-    "kind": 8,
-    "snippet": "wixCRM from 'wix-crm';",
-    "docs": "The [wix-crm](https://www.wix.com/corvid/reference/wix-crm.html) module contains functionality for working with your site's contacts from client-side code."
-  },
-  {
     "name": "import wixLocation from 'wix-location'",
     "kind": 8,
     "snippet": "wixLocation from 'wix-location';",
