@@ -73,6 +73,11 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
+        "required": [
+          "functionLocation",
+          "functionName",
+          "executionConfig"
+        ],
         "properties": {
           "functionLocation": {
             "type": "string",
@@ -90,6 +95,11 @@
                 "body": "$1.${2|js,jsw|}"
               }
             ]
+          },
+          "description": {
+            "type": "string",
+            "title": "description (String)",
+            "description": "A description of the job."
           },
           "executionConfig": {
             "type": "object",
@@ -167,26 +177,56 @@
               {
                 "required": [
                   "cronExpression"
-                ]
+                ],
+                "not": {
+                  "required": [
+                    "time"
+                  ]
+                }
               },
               {
                 "required": [
                   "time"
-                ]
+                ],
+                "not": {
+                  "required": [
+                    "cronExpression"
+                  ]
+                }
               }
-            ]
-          },
-          "description": {
-            "type": "string",
-            "title": "description (String)",
-            "description": "A description of the job."
+            ],
+            "dependencies": {
+              "dayOfWeek": {
+                "required": [
+                  "time"
+                ],
+                "not": {
+                  "required": [
+                    "dateInMonth"
+                  ]
+                }
+              },
+              "dateInMonth": {
+                "required": [
+                  "time"
+                ],
+                "not": {
+                  "required": [
+                    "dayOfWeek"
+                  ]
+                }
+              },
+              "cronExpression": {
+                "not": {
+                  "required": [
+                    "dayOfWeek",
+                    "dateInMonth"
+                  ]
+                }
+              }
+            }
           }
-        },
-        "required": [
-          "functionLocation",
-          "functionName",
-          "executionConfig"
-        ]
+        }
       }
     }
   }

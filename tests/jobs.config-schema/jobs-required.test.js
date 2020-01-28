@@ -2,6 +2,10 @@
 const { shouldBeError } = require('./util');
 
 describe('errors', () => {
+  it('should have required property `jobs`', () => {
+    shouldBeError({}, /should have required property 'jobs'/);
+  });
+
   it('should NOT have fewer than 1 items', () => {
     shouldBeError({
       "jobs": []
@@ -94,5 +98,20 @@ describe('errors', () => {
         }
       ]
     }, /should NOT have additional properties, but found 'abc'/);
+  });
+
+  it('`executionConfig` should NOT have additional properties', () => {
+    shouldBeError({
+      "jobs": [
+        {
+          "functionLocation": "/z.jsw",
+          "functionName": "a",
+          "executionConfig": {
+            "xyz": "abc",
+            "cronExpression": "0 * * * *"
+          }
+        },
+      ]
+    }, /should NOT have additional properties, but found 'xyz'/);
   });
 });
