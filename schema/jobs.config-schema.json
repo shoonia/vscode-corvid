@@ -19,8 +19,8 @@
           "label": "For daily jobs",
           "body": [
             {
-              "functionLocation": "/$1",
-              "functionName": "$2.${3|js,jsw|}",
+              "functionLocation": "/$1.${2|js,jsw|}",
+              "functionName": "$3",
               "description": "$4",
               "executionConfig": {
                 "time": "$CURRENT_HOUR:$CURRENT_MINUTE$5"
@@ -32,8 +32,8 @@
           "label": "For monthly jobs",
           "body": [
             {
-              "functionLocation": "/$1",
-              "functionName": "$2.${3|js,jsw|}",
+              "functionLocation": "/$1.${2|js,jsw|}",
+              "functionName": "$3",
               "description": "$4",
               "executionConfig": {
                 "time": "$CURRENT_HOUR:$CURRENT_MINUTE$5",
@@ -46,8 +46,8 @@
           "label": "For weekly jobs",
           "body": [
             {
-              "functionLocation": "/$1",
-              "functionName": "$2.${3|js,jsw|}",
+              "functionLocation": "/$1.${2|js,jsw|}",
+              "functionName": "$3",
               "description": "$4",
               "executionConfig": {
                 "time": "$CURRENT_HOUR:$CURRENT_MINUTE$5",
@@ -60,8 +60,8 @@
           "label": "Every hour",
           "body": [
             {
-              "functionLocation": "/$1",
-              "functionName": "$2.${3|js,jsw|}",
+              "functionLocation": "/$1.${2|js,jsw|}",
+              "functionName": "$3",
               "description": "$4",
               "executionConfig": {
                 "cronExpression": "0 * * * *$5"
@@ -83,18 +83,18 @@
             "type": "string",
             "title": "functionLocation (String)",
             "description": "The location of the file of the backend function that contains the function you want to run at the scheduled time. The function can be any function in any backend .js or .jsw file.",
-            "default": "/"
+            "defaultSnippets": [
+              {
+                "title": "Make sure you export the function that you want the job scheduler to call.",
+                "body": "/$1.${2|js,jsw|}"
+              }
+            ]
           },
           "functionName": {
             "type": "string",
             "title": "functionName (String)",
             "description": "Name of the function you want to run at the scheduled time.",
-            "defaultSnippets": [
-              {
-                "title": "Make sure you export the function that you want the job scheduler to call.",
-                "body": "$1.${2|js,jsw|}"
-              }
-            ]
+            "pattern": "^[$a-zA-Z_][0-9a-zA-Z_$]*$"
           },
           "description": {
             "type": "string",
