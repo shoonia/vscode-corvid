@@ -6,11 +6,15 @@ describe('functionName', () => {
   it('should be valid', () => {
     const names = [
       '$',
+      '$$',
       '$name',
       '_name',
+      '__name',
       'fn_name',
       'NameFn',
-      'name1'
+      'name1',
+      'name123',
+      '$$__NN_',
     ];
 
     names.forEach((name) => {
@@ -34,6 +38,7 @@ describe('functionName', () => {
       ' ',
       '1name',
       '%name',
+      '.name',
       'name name',
       'name-name',
       'функція'

@@ -1,5 +1,8 @@
 # Change Log
 
+## next
+* Fixed pattern for `functionName` property in `jobs.config` schema
+
 ## v1.12.0
 * Added autocomplete for external packages
 * Fixed mutually exclusive properties `time` and `cronExpression` in `jobs.config`

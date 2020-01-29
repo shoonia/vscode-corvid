@@ -94,7 +94,7 @@
             "type": "string",
             "title": "functionName (String)",
             "description": "Name of the function you want to run at the scheduled time.",
-            "pattern": "^[$a-zA-Z_][0-9a-zA-Z_$]*$"
+            "pattern": "^[\\$a-zA-Z_][\\$\\w]*$"
           },
           "description": {
             "type": "string",
