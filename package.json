@@ -39,8 +39,8 @@
           "corvid.autocomplete.jsw": {
             "scope": "resource",
             "type": "boolean",
-            "default": false,
-            "description": "Enable autocomplete for Corvid web modules (Alpha)"
+            "default": true,
+            "description": "Enable autocomplete for Corvid web modules"
           }
         }
       }

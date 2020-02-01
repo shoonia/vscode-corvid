@@ -12,6 +12,7 @@ This extension contributes the following variables to the [settings](https://cod
 
 * `corvid.autocomplete.$w` - Enable/disable autocomplete for `$w()` selectors.
 * `corvid.autocomplete.import` - Enable/disable autocomplete for import Wix modules
+* `corvid.autocomplete.jsw` - Enable/disable autocomplete for Corvid web modules
 
 ## Snippets List
 

@@ -39,8 +39,8 @@ export const createModuleName = (str) => str.replace(
   (s) => s.toUpperCase().replace(/\W/, ''),
 );
 
-export const resolve = (path) => {
+export const resolve = (...path) => {
   const [root] = workspace.workspaceFolders;
 
-  return join(root.uri.fsPath, path);
+  return join(root.uri.fsPath, ...path);
 };
