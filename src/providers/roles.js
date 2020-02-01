@@ -1,9 +1,6 @@
 import { statSync, readFileSync, existsSync } from 'fs';
-import { CompletionItemKind } from 'vscode';
-
 import { isFrontend, createCompletionList } from '../util';
 
-const { Class } = CompletionItemKind;
 const cache = new Map();
 
 const getFileUpdatedTime = (path) => {
@@ -33,7 +30,7 @@ const getCompletions = (filePath, timestamp) => {
         const [item] = element.items;
 
         return {
-          kind: Class,
+          kind: 6,
           name: item.role,
         };
       });

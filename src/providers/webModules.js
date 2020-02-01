@@ -1,6 +1,6 @@
 import { readdirSync, lstatSync } from 'fs';
 import { join, extname } from 'path';
-import slash from 'slash';
+import slash from 'slash/index';
 
 import { createCompletionList, resolve } from '../util';
 
