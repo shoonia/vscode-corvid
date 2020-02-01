@@ -2,6 +2,7 @@ import { languages, workspace } from 'vscode';
 
 import { modules } from './modules';
 import { roles } from './roles';
+import { jsw } from './webModules';
 
 const config = workspace.getConfiguration('corvid.autocomplete', null);
 
@@ -21,6 +22,9 @@ export const getProviders = () => {
   }
   if (config.get('$w')) {
     providers.push(register(roles, '#'));
+  }
+  if (config.get('jsw')) {
+    providers.push(register(jsw, '/'));
   }
 
   return providers;
