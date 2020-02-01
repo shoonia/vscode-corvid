@@ -1,9 +1,8 @@
 import { readdirSync } from 'fs';
 import { join, extname } from 'path';
-import { workspace } from 'vscode';
 import slash from 'slash';
 
-import { createCompletionList } from '../util';
+import { createCompletionList, resolve } from '../util';
 
 function getFiles (path, ext) {
   const fileList = [];
@@ -28,8 +27,7 @@ export const jsw = {
     const match = /^(?:import.+)(?:['"])(backend\/.*)/m.exec(prefix);
 
     if (Array.isArray(match)) {
-      const [root] = workspace.workspaceFolders;
-      const path = join(root.uri.fsPath, 'src/backend');
+      const path = resolve('src/backend');
       const files = getFiles(path, '.jsw');
 
       const items = files.map((name) => {

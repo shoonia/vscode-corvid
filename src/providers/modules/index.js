@@ -1,6 +1,4 @@
-import { join } from 'path';
 import { existsSync } from 'fs';
-import { workspace } from 'vscode';
 
 import backend from './_backend.json';
 import frontend from './_frontend.json';
@@ -9,12 +7,12 @@ import {
   isBackend,
   createCompletionList,
   createModuleName,
+  resolve,
 } from '../../util';
 
 const corvidPackage = (() => {
   try {
-    const [root] = workspace.workspaceFolders;
-    const path = join(root.uri.fsPath, 'src/corvid-package.json');
+    const path = resolve('src/corvid-package.json');
 
     if (existsSync(path)) {
       const { dependencies } = require(path);

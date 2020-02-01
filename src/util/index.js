@@ -1,4 +1,7 @@
 import { isString } from 'util';
+import { join } from 'path';
+import { workspace } from 'vscode';
+
 import {
   CompletionItem,
   SnippetString,
@@ -35,3 +38,9 @@ export const createModuleName = (str) => str.replace(
   /([\W][\w]?)/g,
   (s) => s.toUpperCase().replace(/\W/, ''),
 );
+
+export const resolve = (path) => {
+  const [root] = workspace.workspaceFolders;
+
+  return join(root.uri.fsPath, path);
+};
