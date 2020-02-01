@@ -28,3 +28,4 @@ This extension contributes the following variables to the [settings](https://cod
 | iws→    | `import { local, ... } from 'wix-storage';`
 | ihf→    | `import { ok, ... } from 'wix-http-functions';`
 | iwr→    | `import { ok, ... } from 'wix-router';`
+| jsw→    | `import { ... } from 'backend';`

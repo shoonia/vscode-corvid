@@ -1,85 +1,82 @@
 {
-  "$w": {
+  "$function $w(selector: string): Element | Array<Element>": {
     "prefix": [
       "$",
       "$w"
     ],
     "scope": "javascript",
     "body": [
-      "\\$w('$1')"
-    ],
-    "description": "function $w(selector: string): Element | Array<Element>"
+      "\\$w('$1')$2"
+    ]
   },
-  "wixWindow": {
+  "wix-window": {
     "prefix": "iww",
     "scope": "javascript",
     "body": [
       "import wixWindow from 'wix-window';"
-    ],
-    "description": "wix-window"
+    ]
   },
-  "wixData": {
+  "wix-data": {
     "prefix": "iwd",
     "scope": "javascript",
     "body": [
       "import wixData from 'wix-data';"
-    ],
-    "description": "wix-data"
+    ]
   },
-  "wixLocation": {
+  "wix-location": {
     "prefix": "iwl",
     "scope": "javascript",
     "body": [
       "import wixLocation from 'wix-location';"
-    ],
-    "description": "wix-location"
+    ]
   },
-  "wixUsers": {
+  "wix-users": {
     "prefix": "iwu",
     "scope": "javascript",
     "body": [
       "import wixUsers from 'wix-users';"
-    ],
-    "description": "wix-users"
+    ]
   },
-  "wixUsersBackend": {
+  "wix-users-backend": {
     "prefix": "iwub",
     "scope": "javascript",
     "body": [
       "import wixUsers from 'wix-users-backend';"
-    ],
-    "description": "wix-users-backend"
+    ]
   },
-  "fetch": {
+  "wix-fetch": {
     "prefix": "iwf",
     "scope": "javascript",
     "body": [
       "import { ${1|fetch,getJSON|} } from 'wix-fetch';"
-    ],
-    "description": "fetch wix-fetch"
+    ]
   },
-  "storage": {
+  "wix-storage": {
     "prefix": "iws",
     "scope": "javascript",
     "body": [
       "import { ${1|local,session,memory|} } from 'wix-storage';"
-    ],
-    "description": "wix-storage"
+    ]
   },
-  "http-function": {
+  "wix-http-functions": {
     "prefix": "ihf",
     "scope": "javascript",
     "body": [
       "import { ${1|ok,get,post,use,badRequest,notFound,serverError,created,delete,forbidden,options,put,response|} } from 'wix-http-functions';"
-    ],
-    "description": "wix-http-functions"
+    ]
   },
-  "router": {
+  "wix-router": {
     "prefix": "iwr",
     "scope": "javascript",
     "body": [
       "import { ${1|ok,notFound,next,redirect,forbidden,router,sendStatus,afterRouter,afterSitemap,beforeRouter,customizeQuery,sitemap|} } from 'wix-router';"
-    ],
-    "description": "wix-router"
+    ]
+  },
+  "Corvid Web Modules": {
+    "prefix": "jsw",
+    "scope":"javascript",
+    "body":[
+      "import { $1 } from 'backend$2';"
+    ]
   }
 }
