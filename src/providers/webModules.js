@@ -11,10 +11,9 @@ const getItems = async (path) => {
   if (existsSync(path)) {
     const files = await readdir(path);
 
-    for (const file of files) {
-      const filePath = join(path, file);
+    for (const name of files) {
+      const filePath = join(path, name);
       const status = await lstat(filePath);
-      const name = filePath.slice(path.length + 1);
 
       if (status.isDirectory()) {
         items.push({
@@ -22,7 +21,7 @@ const getItems = async (path) => {
           kind: 18,
         });
 
-      } else if (extname(file) === '.jsw') {
+      } else if (extname(name) === '.jsw') {
         items.push({
           name,
           kind: 16,
@@ -38,7 +37,7 @@ const getItems = async (path) => {
 export const jsw = {
   async provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
-    const match = /^(?:import.+)(?:['"])(backend\/.*)/m.exec(prefix);
+    const match = /^(?:import.+['"])(backend\/.*)/m.exec(prefix);
 
     if (Array.isArray(match)) {
       try {
