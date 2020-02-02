@@ -1,13 +1,15 @@
-import { readdirSync, lstatSync, existsSync } from 'fs';
+import { lstatSync, existsSync, promises } from 'fs';
 import { join, extname } from 'path';
 
 import { createCompletionList, resolve } from '../util';
 
-const getItems = (path) => {
+const { readdir } = promises;
+
+const getItems = async (path) => {
   const items = [];
 
   if (existsSync(path)) {
-    const files = readdirSync(path);
+    const files = await readdir(path);
 
     files.forEach((file) => {
       const filePath = join(path, file);
@@ -33,7 +35,7 @@ const getItems = (path) => {
 };
 
 export const jsw = {
-  provideCompletionItems(doc, position) {
+  async provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
     const match = /^(?:import.+)(?:['"])(backend\/.*)/m.exec(prefix);
 
@@ -41,7 +43,7 @@ export const jsw = {
       try {
         const dir = match[1].split('/').slice(0, -1).join('/');
         const path = resolve('src', dir);
-        const items = getItems(path);
+        const items = await getItems(path);
 
         return createCompletionList(items);
       } catch (error) { /**/ }

@@ -1,26 +1,27 @@
-import { statSync, readFileSync, existsSync } from 'fs';
+import { statSync, existsSync, promises } from 'fs';
 import { isFrontend, createCompletionList } from '../util';
 
+const { readFile } = promises;
 const cache = new Map();
 
-const getFileUpdatedTime = (path) => {
+const lastModifiedTime = (path) => {
   try {
-    return statSync(path).mtime.getTime();
+    return statSync(path).mtimeMs;
   } catch (error) {
     return null;
   }
 };
 
-const getCompletions = (filePath, timestamp) => {
+const getCompletions = async (filePath, mtimeMs) => {
   if (cache.has(filePath)) {
     const data = cache.get(filePath);
 
-    if (data.timestamp === timestamp) {
+    if (data.mtimeMs === mtimeMs) {
       return data.completions;
     }
   }
   try {
-    const file = readFileSync(filePath, 'utf8');
+    const file = await readFile(filePath, 'utf8');
     const { content } = JSON.parse(file);
     const json = Buffer.from(content.content, 'base64').toString('utf8');
     const { data } = JSON.parse(json);
@@ -37,14 +38,14 @@ const getCompletions = (filePath, timestamp) => {
 
     const completions = createCompletionList(items);
 
-    cache.set(filePath, { completions, timestamp });
+    cache.set(filePath, { completions, mtimeMs });
 
     return completions;
   } catch (error) {
     cache.clear();
   }
 
-  return null;
+  return [];
 };
 
 export const roles = {
@@ -61,15 +62,10 @@ export const roles = {
 
     const filePath = doc.fileName.slice(0, -2).concat('wix');
 
-    if (!existsSync(filePath)) {
-      return;
-    }
+    if (existsSync(filePath)) {
+      const mtimeMs = lastModifiedTime(filePath);
 
-    const timestamp = getFileUpdatedTime(filePath);
-    const completions = getCompletions(filePath, timestamp);
-
-    if (Array.isArray(completions)) {
-      return completions;
+      return getCompletions(filePath, mtimeMs);
     }
   },
 };
