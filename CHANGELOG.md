@@ -1,7 +1,7 @@
 # Change Log
 
-## next
-* Added autocomplete for Corvid web modules
+## v1.13.0
+* Added autocomplete for Corvid web modules (backend files)
 * Fixed pattern for `functionName` property in `jobs.config` schema
 
 ## v1.12.0
