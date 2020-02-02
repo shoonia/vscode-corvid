@@ -82,11 +82,8 @@
     "Other"
   ],
   "engines": {
-    "vscode": "^1.30.0",
+    "vscode": "^1.40.0",
     "vsce": "^1.71.0"
-  },
-  "dependencies": {
-    "slash": "^3.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
@@ -96,7 +93,6 @@
     "jest": "^25.1.0",
     "jest-json-schema": "^2.1.0",
     "rollup": "^1.31.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.2.0"
   },
   "husky": {
