@@ -1,18 +1,22 @@
-import { statSync, existsSync, promises } from 'fs';
+import { existsSync, promises } from 'fs';
 import { isFrontend, createCompletionList } from '../util';
 
-const { readFile } = promises;
+const { readFile, stat } = promises;
 const cache = new Map();
 
-const lastModifiedTime = (path) => {
+const lastModifiedTime = async (path) => {
   try {
-    return statSync(path).mtimeMs;
+    const { mtimeMs } = await stat(path);
+
+    return mtimeMs;
   } catch (error) {
     return null;
   }
 };
 
-const getCompletions = async (filePath, mtimeMs) => {
+const getCompletions = async (filePath) => {
+  const mtimeMs = await lastModifiedTime(filePath);
+
   if (cache.has(filePath)) {
     const data = cache.get(filePath);
 
@@ -20,6 +24,7 @@ const getCompletions = async (filePath, mtimeMs) => {
       return data.completions;
     }
   }
+
   try {
     const file = await readFile(filePath, 'utf8');
     const { content } = JSON.parse(file);
@@ -44,8 +49,6 @@ const getCompletions = async (filePath, mtimeMs) => {
   } catch (error) {
     cache.clear();
   }
-
-  return [];
 };
 
 export const roles = {
@@ -63,9 +66,7 @@ export const roles = {
     const filePath = doc.fileName.slice(0, -2).concat('wix');
 
     if (existsSync(filePath)) {
-      const mtimeMs = lastModifiedTime(filePath);
-
-      return getCompletions(filePath, mtimeMs);
+      return getCompletions(filePath);
     }
   },
 };

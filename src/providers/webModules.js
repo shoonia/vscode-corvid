@@ -1,9 +1,9 @@
-import { lstatSync, existsSync, promises } from 'fs';
+import { existsSync, promises } from 'fs';
 import { join, extname } from 'path';
 
 import { createCompletionList, resolve } from '../util';
 
-const { readdir } = promises;
+const { readdir, lstat } = promises;
 
 const getItems = async (path) => {
   const items = [];
@@ -11,11 +11,12 @@ const getItems = async (path) => {
   if (existsSync(path)) {
     const files = await readdir(path);
 
-    files.forEach((file) => {
+    for (const file of files) {
       const filePath = join(path, file);
+      const status = await lstat(filePath);
       const name = filePath.slice(path.length + 1);
 
-      if (lstatSync(filePath).isDirectory()) {
+      if (status.isDirectory()) {
         items.push({
           name,
           kind: 18,
@@ -28,7 +29,7 @@ const getItems = async (path) => {
           detail: 'Corvid Web Module',
         });
       }
-    });
+    }
   }
 
   return items;
