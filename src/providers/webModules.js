@@ -1,35 +1,35 @@
-import { readdirSync, lstatSync } from 'fs';
+import { readdirSync, lstatSync, existsSync } from 'fs';
 import { join, extname } from 'path';
-import slash from 'slash/index';
 
 import { createCompletionList, resolve } from '../util';
 
-const isJsw = (path) => extname(path) === '.jsw';
-const isDir = (path) => lstatSync(path).isDirectory();
-
 const getItems = (path) => {
-  const fileList = [];
-  const files = readdirSync(path);
+  const items = [];
 
-  files.forEach((file) => {
-    const filePath = join(path, file);
-    const name = filePath.slice(path.length + 1);
+  if (existsSync(path)) {
+    const files = readdirSync(path);
 
-    if (isJsw(file)) {
-      fileList.push({
-        name: slash(name),
-        kind: 16,
-        detail: 'Corvid Web Module',
-      });
-    } else if (isDir(filePath)) {
-      fileList.push({
-        name: slash(name),
-        kind: 18,
-      });
-    }
-  });
+    files.forEach((file) => {
+      const filePath = join(path, file);
+      const name = filePath.slice(path.length + 1);
 
-  return fileList;
+      if (lstatSync(filePath).isDirectory()) {
+        items.push({
+          name,
+          kind: 18,
+        });
+
+      } else if (extname(file) === '.jsw') {
+        items.push({
+          name,
+          kind: 16,
+          detail: 'Corvid Web Module',
+        });
+      }
+    });
+  }
+
+  return items;
 };
 
 export const jsw = {
