@@ -1,11 +1,12 @@
 import { existsSync, promises } from 'fs';
-import { join, extname } from 'path';
+import { join, extname, basename } from 'path';
 
 import { createCompletionList, resolve } from '../util';
 
 const { readdir, lstat } = promises;
 
 const getItems = async (path) => {
+  const ext = '.jsw';
   const items = [];
 
   if (existsSync(path)) {
@@ -21,11 +22,12 @@ const getItems = async (path) => {
           kind: 18,
         });
 
-      } else if (extname(name) === '.jsw') {
+      } else if (extname(name) === ext) {
         items.push({
-          name,
+          name: basename(name, ext),
           kind: 16,
-          detail: 'Corvid Web Module',
+          detail: name,
+          docs: 'Corvid Web Module',
         });
       }
     }

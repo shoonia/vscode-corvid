@@ -31,7 +31,7 @@ const corvidPackage = (() => {
           };
         });
     }
-  } catch (error) {/**/ }
+  } catch (error) { /**/ }
 
   return [];
 })();

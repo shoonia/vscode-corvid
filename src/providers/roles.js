@@ -9,9 +9,7 @@ const lastModifiedTime = async (path) => {
     const { mtimeMs } = await stat(path);
 
     return mtimeMs;
-  } catch (error) {
-    return null;
-  }
+  } catch (error) { /**/ }
 };
 
 const getCompletions = async (filePath) => {
