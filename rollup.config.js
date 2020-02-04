@@ -11,7 +11,6 @@ const config = {
   },
   external: [
     'fs',
-    'util',
     'path',
     'vscode',
   ],

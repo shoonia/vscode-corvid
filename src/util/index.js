@@ -1,4 +1,3 @@
-import { isString } from 'util';
 import { join } from 'path';
 import { workspace } from 'vscode';
 
@@ -13,6 +12,8 @@ const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
 
 export const isBackend = (path) => BACKEND.test(path);
 export const isFrontend = (path) => FRONTEND.test(path);
+export const isString = (value) => typeof value === 'string';
+export const isObject = (value) => value !== null && typeof value === 'object';
 
 export const createCompletionList = (list) => {
   return list.map((item) => {
