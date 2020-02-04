@@ -6,9 +6,14 @@ import site from './_site.json';
 import {
   isBackend,
   createCompletionList,
-  createModuleName,
   resolve,
+  isObject,
 } from '../../util';
+
+const createModuleName = (str) => str.replace(
+  /([\W][\w]?)/g,
+  (s) => s.replace(/\W/, '').toUpperCase(),
+);
 
 const corvidPackage = (() => {
   try {
@@ -17,9 +22,8 @@ const corvidPackage = (() => {
     if (existsSync(path)) {
       const { dependencies } = require(path);
 
-      return Object
-        .entries(dependencies)
-        .map(([name, version]) => {
+      if (isObject(dependencies)) {
+        return Object.entries(dependencies).map(([name, version]) => {
           const pkg = createModuleName(name);
 
           return {
@@ -30,6 +34,7 @@ const corvidPackage = (() => {
             docs: 'Corvid Package Manager',
           };
         });
+      }
     }
   } catch (error) { /**/ }
 

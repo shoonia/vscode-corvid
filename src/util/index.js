@@ -35,11 +35,6 @@ export const createCompletionList = (list) => {
   });
 };
 
-export const createModuleName = (str) => str.replace(
-  /([\W][\w]?)/g,
-  (s) => s.toUpperCase().replace(/\W/, ''),
-);
-
 export const resolve = (...path) => {
   const [root] = workspace.workspaceFolders;
 
