@@ -1,5 +1,8 @@
 # Change Log
 
+## next
+* Added `wix-animations` module to import completion.
+
 ## v1.13.0
 * Added autocomplete for Corvid web modules (backend files)
 * Fixed pattern for `functionName` property in `jobs.config` schema

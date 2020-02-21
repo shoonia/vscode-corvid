@@ -1,5 +1,11 @@
 [
   {
+    "name": "import wixAnimations from 'wix-animations'",
+    "kind": 8,
+    "snippet": "{ timeline } from 'wix-animations';",
+    "docs": "The wix-animations module contains functionality for working with animations."
+  },
+  {
     "name": "import wixLocation from 'wix-location'",
     "kind": 8,
     "snippet": "wixLocation from 'wix-location';",
