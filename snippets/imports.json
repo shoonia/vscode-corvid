@@ -6,7 +6,7 @@
     ],
     "scope": "javascript",
     "body": [
-      "\\$w('$1')$2"
+      "\\$w('#$1')$2"
     ]
   },
   "wix-window": {
