@@ -1,5 +1,5 @@
 {
-  "$function $w(selector: string): Element | Array<Element>": {
+  "function $w(selector: string): Element | Array<Element>": {
     "prefix": [
       "$",
       "$w"
@@ -74,8 +74,8 @@
   },
   "Corvid Web Modules": {
     "prefix": "jsw",
-    "scope":"javascript",
-    "body":[
+    "scope": "javascript",
+    "body": [
       "import { $1 } from 'backend$2';"
     ]
   }
