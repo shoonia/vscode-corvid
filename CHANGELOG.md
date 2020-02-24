@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.15.0
+* Added `wix-realtime`, `wix-realtime-backend` modules to import completion.
+
 ## v1.14.0
 * Added `wix-animations` and `wix-secrets-backend` modules to import completion.
 
