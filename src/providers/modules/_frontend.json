@@ -6,6 +6,12 @@
     "docs": "The wix-animations module contains functionality for working with animations."
   },
   {
+    "name": "import wixBookings from 'wix-bookings'",
+    "kind": 8,
+    "snippet": "wixBookings from 'wix-bookings';",
+    "docs": "The [wix-bookings](https://www.wix.com/corvid/reference/wix-bookings.html) module contains functionality for working with bookings from client-side code."
+  },
+  {
     "name": "import wixLocation from 'wix-location'",
     "kind": 8,
     "snippet": "wixLocation from 'wix-location';",

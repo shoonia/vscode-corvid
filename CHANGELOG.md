@@ -1,5 +1,8 @@
 # Change Log
 
+## v1.16.0
+* Added `wix-bookings` module to import completion.
+
 ## v1.15.0
 * Added `wix-realtime`, `wix-realtime-backend` modules to import completion.
 
