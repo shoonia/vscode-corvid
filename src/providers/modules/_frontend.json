@@ -3,7 +3,7 @@
     "name": "import wixAnimations from 'wix-animations'",
     "kind": 8,
     "snippet": "{ timeline } from 'wix-animations';",
-    "docs": "The wix-animations module contains functionality for working with animations."
+    "docs": "The [wix-animations](https://www.wix.com/corvid/reference/wix-animations.html) module contains functionality for working with animations."
   },
   {
     "name": "import wixBookings from 'wix-bookings'",
