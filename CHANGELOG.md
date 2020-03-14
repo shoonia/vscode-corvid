@@ -1,5 +1,8 @@
 # Change Log
 
+## next
+* Disabled autocomplete for `$w()` selectors by default. The [corvid-types](https://github.com/wix-incubator/corvid-types) work well now, and this feature duplicates the completion. You can enable autocomplete in extension [settings](https://code.visualstudio.com/docs/getstarted/settings).
+
 ## v1.16.0
 * Added `wix-bookings` module to import completion.
 

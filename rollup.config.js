@@ -49,7 +49,6 @@ if (process.env.NODE_ENV === 'production') {
       output: {
         ecma: 8,
         comments: false,
-        ascii_only: true,
       },
     }),
   );

@@ -34,8 +34,8 @@ const getCompletions = async (filePath) => {
         const [item] = element.items;
 
         return {
+          name: `#${item.role}`,
           kind: 6,
-          name: item.role,
         };
       });
 

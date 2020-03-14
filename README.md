@@ -2,17 +2,18 @@
 
 [![extension version](https://vsmarketplacebadge.apphb.com/version/shoonia.vscode-corvid.svg)](https://marketplace.visualstudio.com/items?itemName=shoonia.vscode-corvid)
 
-
-The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid). Highlighting `.jsw`, `.wix`, support `jobs.config`, autocomplete selectors, snippets.
+The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid). Highlighting `.jsw`, `.wix`, support `jobs.config`, autocomplete, snippets.
 
 <img src="https://raw.githubusercontent.com/shoonia/vscode-corvid/prod/icons/exemple-1.png" alt="vscode-corvid" width="500" />
 
 ## Settings Options
 This extension contributes the following variables to the [settings](https://code.visualstudio.com/docs/getstarted/settings):
 
-* `corvid.autocomplete.$w` - Enable/disable autocomplete for `$w()` selectors.
-* `corvid.autocomplete.import` - Enable/disable autocomplete for import Wix modules
-* `corvid.autocomplete.jsw` - Enable/disable autocomplete for Corvid web modules
+| Name                        | Description                                   | Default
+| --------------------------- | --------------------------------------------- | ------- |
+| `corvid.autocomplete.$w`    | on/off autocomplete for `$w()` selectors.     | false
+| `corvid.autocomplete.import`| on/off autocomplete for import Wix modules.   | true
+| `corvid.autocomplete.jsw`   | on/off autocomplete for Corvid web modules.   | true
 
 ## Snippets List
 

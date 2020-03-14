@@ -1,7 +1,6 @@
 import { join } from 'path';
-import { workspace } from 'vscode';
-
 import {
+  workspace,
   CompletionItem,
   SnippetString,
   MarkdownString,
