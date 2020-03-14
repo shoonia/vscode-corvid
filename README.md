@@ -9,11 +9,11 @@ The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid)
 ## Settings Options
 This extension contributes the following variables to the [settings](https://code.visualstudio.com/docs/getstarted/settings):
 
-| Name                        | Description                                   | Default
-| --------------------------- | --------------------------------------------- | ------- |
-| `corvid.autocomplete.$w`    | on/off autocomplete for `$w()` selectors.     | false
-| `corvid.autocomplete.import`| on/off autocomplete for import Wix modules.   | true
-| `corvid.autocomplete.jsw`   | on/off autocomplete for Corvid web modules.   | true
+| Name                         | Description                                 | Default
+| ---------------------------  | ------------------------------------------- | ------- |
+| `corvid.autocomplete.$w`     | on/off autocomplete for `$w()` selectors.   | false
+| `corvid.autocomplete.import` | on/off autocomplete for import Wix modules. | true
+| `corvid.autocomplete.jsw`    | on/off autocomplete for Corvid web modules. | true
 
 ## Snippets List
 
