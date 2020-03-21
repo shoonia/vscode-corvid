@@ -2,7 +2,9 @@ import { terser } from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 
-const config = {
+const isProd = !process.env.ROLLUP_WATCH;
+
+export default {
   input: './src/extension.js',
   output: {
     file: './dist/extension.js',
@@ -14,18 +16,13 @@ const config = {
     'path',
     'vscode',
   ],
-  plugins: [
-    commonjs(),
-    json(),
-  ],
   watch: {
     include: './src/**',
   },
-};
-
-if (process.env.NODE_ENV === 'production') {
-  config.plugins.push(
-    terser({
+  plugins: [
+    commonjs(),
+    json(),
+    isProd && terser({
       ecma: 8,
       module: true,
       toplevel: true,
@@ -51,7 +48,5 @@ if (process.env.NODE_ENV === 'production') {
         comments: false,
       },
     }),
-  );
-}
-
-export default config;
+  ],
+};
