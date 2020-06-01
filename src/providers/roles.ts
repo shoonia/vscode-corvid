@@ -42,7 +42,7 @@ const getCompletions = async (filePath: string) => {
     const file = await readFile(filePath, 'utf8');
     const { content } = JSON.parse(file);
     const json = Buffer.from(content.content, 'base64').toString('utf8');
-    const { data } = JSON.parse(json)! as WixConnectData;
+    const { data } = JSON.parse(json) as WixConnectData;
 
     const items = Object.values(data.connections_data)
       .map((element) => {

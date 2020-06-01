@@ -1,5 +1,5 @@
 import { CompletionItemProvider } from 'vscode';
-import { existsSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 
 import backend from './_backend.json';
 import frontend from './_frontend.json';
@@ -22,7 +22,7 @@ const corvidPackage: DescribeCompletionItem[] = (() => {
     const path = resolve('src/corvid-package.json');
 
     if (existsSync(path)) {
-      const { dependencies } = require(path);
+      const { dependencies } = JSON.parse(readFileSync(path, 'utf8'));
 
       if (isObject(dependencies)) {
         return Object.entries(dependencies).map(([name, version]) => {

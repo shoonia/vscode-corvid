@@ -1,11 +1,11 @@
 import { CompletionItemProvider } from 'vscode';
-import { existsSync, promises, PathLike } from 'fs';
+import { existsSync, promises } from 'fs';
 import { join, extname, basename } from 'path';
 
 import {
   createCompletionList,
   resolve,
-  DescribeCompletionItem
+  DescribeCompletionItem,
 } from '../util';
 
 const { readdir, lstat } = promises;

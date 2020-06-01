@@ -12,7 +12,7 @@ export interface DescribeCompletionItem {
   snippet?: string;
   detail?: string;
   docs?: string;
-};
+}
 
 const BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
 const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
