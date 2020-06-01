@@ -1,10 +1,25 @@
 import { existsSync, promises } from 'fs';
+import { CompletionItemProvider } from 'vscode';
 import { isFrontend, createCompletionList } from '../util';
+
+interface Items {
+  role: string;
+}
+
+interface WixConnectData {
+  data: {
+    connections_data: {
+      [key: string]: {
+        items: Items[];
+      },
+    };
+  },
+}
 
 const { readFile, stat } = promises;
 const cache = new Map();
 
-const lastModifiedTime = async (path) => {
+const lastModifiedTime = async (path: string) => {
   try {
     const { mtimeMs } = await stat(path);
 
@@ -12,7 +27,7 @@ const lastModifiedTime = async (path) => {
   } catch (error) { /**/ }
 };
 
-const getCompletions = async (filePath) => {
+const getCompletions = async (filePath: string) => {
   const mtimeMs = await lastModifiedTime(filePath);
 
   if (cache.has(filePath)) {
@@ -27,7 +42,7 @@ const getCompletions = async (filePath) => {
     const file = await readFile(filePath, 'utf8');
     const { content } = JSON.parse(file);
     const json = Buffer.from(content.content, 'base64').toString('utf8');
-    const { data } = JSON.parse(json);
+    const { data } = JSON.parse(json) as WixConnectData;
 
     const items = Object.values(data.connections_data)
       .map((element) => {
@@ -49,7 +64,7 @@ const getCompletions = async (filePath) => {
   }
 };
 
-export const roles = {
+export const roles: CompletionItemProvider = {
   provideCompletionItems(doc, position) {
     if (!isFrontend(doc.uri.path)) {
       return;

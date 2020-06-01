@@ -1,4 +1,5 @@
-import { existsSync } from 'fs';
+import { CompletionItemProvider } from 'vscode';
+import { existsSync, readFileSync } from 'fs';
 
 import backend from './_backend.json';
 import frontend from './_frontend.json';
@@ -8,19 +9,20 @@ import {
   createCompletionList,
   resolve,
   isObject,
+  DescribeCompletionItem,
 } from '../../util';
 
-const createModuleName = (str) => str.replace(
+const createModuleName = (str: string): string => str.replace(
   /([\W][\w]?)/g,
   (s) => s.replace(/\W/, '').toUpperCase(),
 );
 
-const corvidPackage = (() => {
+const corvidPackage: DescribeCompletionItem[] = (() => {
   try {
     const path = resolve('src/corvid-package.json');
 
     if (existsSync(path)) {
-      const { dependencies } = require(path);
+      const { dependencies } = JSON.parse(readFileSync(path, 'utf8'));
 
       if (isObject(dependencies)) {
         return Object.entries(dependencies).map(([name, version]) => {
@@ -41,11 +43,11 @@ const corvidPackage = (() => {
   return [];
 })();
 
-const common = createCompletionList(site.concat(corvidPackage));
+const common = createCompletionList([...site, ...corvidPackage]);
 const frontendList = createCompletionList(frontend).concat(common);
 const backendList = createCompletionList(backend).concat(common);
 
-export const modules = {
+export const modules: CompletionItemProvider = {
   provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
 

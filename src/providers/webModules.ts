@@ -1,13 +1,18 @@
+import { CompletionItemProvider } from 'vscode';
 import { existsSync, promises } from 'fs';
 import { join, extname, basename } from 'path';
 
-import { createCompletionList, resolve } from '../util';
+import {
+  createCompletionList,
+  resolve,
+  DescribeCompletionItem,
+} from '../util';
 
 const { readdir, lstat } = promises;
 
-const getItems = async (path) => {
+const getItems = async (path: string) => {
   const ext = '.jsw';
-  const items = [];
+  const items: DescribeCompletionItem[] = [];
 
   if (existsSync(path)) {
     const files = await readdir(path);
@@ -36,7 +41,7 @@ const getItems = async (path) => {
   return items;
 };
 
-export const jsw = {
+export const jsw: CompletionItemProvider = {
   async provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
     const match = /^(?:import.+['"])(backend\/.*)/m.exec(prefix);
