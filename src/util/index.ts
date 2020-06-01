@@ -17,12 +17,12 @@ export interface DescribeCompletionItem {
 const BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
 const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
 
-export const isBackend = (path: string): boolean => BACKEND.test(path);
-export const isFrontend = (path: string): boolean => FRONTEND.test(path);
-export const isString = (value: unknown): boolean => typeof value === 'string';
-export const isObject = (value: unknown): boolean => value !== null && typeof value === 'object';
+export const isBackend = (path: string) => BACKEND.test(path);
+export const isFrontend = (path: string) => FRONTEND.test(path);
+export const isString = (value: unknown) => typeof value === 'string';
+export const isObject = (value: unknown) => value !== null && typeof value === 'object';
 
-export const createCompletionList = (list: DescribeCompletionItem[]): CompletionItem[] => {
+export const createCompletionList = (list: DescribeCompletionItem[]) => {
   return list.map((item) => {
     const completion = new CompletionItem(item.name, item.kind);
 
@@ -42,8 +42,14 @@ export const createCompletionList = (list: DescribeCompletionItem[]): Completion
   });
 };
 
-export const resolve = (...path: string[]): string => {
-  const [root] = workspace.workspaceFolders;
+export const resolve = (...path: string[]) => {
+  const folders = workspace.workspaceFolders;
 
-  return join(root.uri.fsPath, ...path);
+  if (Array.isArray(folders)) {
+    const [root] = folders;
+
+    return join(root.uri.fsPath, ...path);
+  }
+
+  return '';
 };

@@ -10,9 +10,9 @@ import {
 
 const { readdir, lstat } = promises;
 
-const getItems = async (path: string): Promise<DescribeCompletionItem[]> => {
+const getItems = async (path: string) => {
   const ext = '.jsw';
-  const items = [];
+  const items: DescribeCompletionItem[] = [];
 
   if (existsSync(path)) {
     const files = await readdir(path);
