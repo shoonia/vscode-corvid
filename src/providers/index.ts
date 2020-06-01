@@ -1,4 +1,4 @@
-import { languages, workspace } from 'vscode';
+import { languages, workspace, CompletionItemProvider } from 'vscode';
 
 import { modules } from './modules';
 import { roles } from './roles';
@@ -6,7 +6,7 @@ import { jsw } from './webModules';
 
 const config = workspace.getConfiguration('corvid.autocomplete', null);
 
-const register = (provider, trigger) => {
+const register = (provider: CompletionItemProvider, trigger: string) => {
   return languages.registerCompletionItemProvider(
     { scheme: 'file', language: 'javascript' },
     provider,

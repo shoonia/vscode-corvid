@@ -1,11 +1,12 @@
 import { terser } from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
+import typescript from '@rollup/plugin-typescript';
 
 const isProd = !process.env.ROLLUP_WATCH;
 
 export default {
-  input: './src/extension.js',
+  input: './src/extension.ts',
   output: {
     file: './dist/extension.js',
     format: 'cjs',
@@ -20,7 +21,12 @@ export default {
     include: './src/**',
   },
   plugins: [
-    commonjs(),
+    typescript({
+      target: 'ES2020',
+    }),
+    commonjs({
+      extensions: ['.js', '.ts'],
+    }),
     json(),
     isProd && terser({
       ecma: 8,
