@@ -6,6 +6,14 @@ import {
   MarkdownString,
 } from 'vscode';
 
+export type DescribeCompletionItem = {
+  name: string;
+  kind: number;
+  snippet: string;
+  detail?: string;
+  docs: string;
+};
+
 const BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
 const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
 
@@ -14,7 +22,7 @@ export const isFrontend = (path: string): boolean => FRONTEND.test(path);
 export const isString = (value: unknown): boolean => typeof value === 'string';
 export const isObject = (value: unknown): boolean => value !== null && typeof value === 'object';
 
-export const createCompletionList = (list): CompletionItem[] => {
+export const createCompletionList = (list: DescribeCompletionItem[]): CompletionItem[] => {
   return list.map((item) => {
     const completion = new CompletionItem(item.name, item.kind);
 

@@ -1,12 +1,16 @@
 import { CompletionItemProvider } from 'vscode';
-import { existsSync, promises } from 'fs';
+import { existsSync, promises, PathLike } from 'fs';
 import { join, extname, basename } from 'path';
 
-import { createCompletionList, resolve } from '../util';
+import {
+  createCompletionList,
+  resolve,
+  DescribeCompletionItem
+} from '../util';
 
 const { readdir, lstat } = promises;
 
-const getItems = async (path) => {
+const getItems = async (path: string): Promise<DescribeCompletionItem[]> => {
   const ext = '.jsw';
   const items = [];
 
