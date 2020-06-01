@@ -21,9 +21,7 @@ export default {
     include: './src/**',
   },
   plugins: [
-    typescript({
-      target: 'ES2020',
-    }),
+    typescript(),
     commonjs({
       extensions: ['.js', '.ts'],
     }),
