@@ -1,4 +1,9 @@
-import { languages, workspace, CompletionItemProvider } from 'vscode';
+import {
+  languages,
+  workspace,
+  CompletionItemProvider,
+  Disposable,
+} from 'vscode';
 
 import { modules } from './modules';
 import { roles } from './roles';
@@ -14,8 +19,8 @@ const register = (provider: CompletionItemProvider, trigger: string) => {
   );
 };
 
-export const getProviders = () => {
-  const providers = [];
+export const getProviders = (): Disposable[] => {
+  const providers: Disposable[] = [];
 
   if (config.get('import')) {
     providers.push(register(modules, ' '));
