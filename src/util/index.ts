@@ -6,12 +6,12 @@ import {
   MarkdownString,
 } from 'vscode';
 
-export type DescribeCompletionItem = {
+export interface DescribeCompletionItem {
   name: string;
   kind: number;
-  snippet: string;
+  snippet?: string;
   detail?: string;
-  docs: string;
+  docs?: string;
 };
 
 const BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;

@@ -43,7 +43,7 @@ const corvidPackage: DescribeCompletionItem[] = (() => {
   return [];
 })();
 
-const common = createCompletionList(site.concat(corvidPackage));
+const common = createCompletionList([...site, ...corvidPackage]);
 const frontendList = createCompletionList(frontend).concat(common);
 const backendList = createCompletionList(backend).concat(common);
 
