@@ -9,12 +9,12 @@ import {
 const BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
 const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
 
-export const isBackend = (path) => BACKEND.test(path);
-export const isFrontend = (path) => FRONTEND.test(path);
-export const isString = (value) => typeof value === 'string';
-export const isObject = (value) => value !== null && typeof value === 'object';
+export const isBackend = (path: string): boolean => BACKEND.test(path);
+export const isFrontend = (path: string): boolean => FRONTEND.test(path);
+export const isString = (value: unknown): boolean => typeof value === 'string';
+export const isObject = (value: unknown): boolean => value !== null && typeof value === 'object';
 
-export const createCompletionList = (list) => {
+export const createCompletionList = (list): CompletionItem[] => {
   return list.map((item) => {
     const completion = new CompletionItem(item.name, item.kind);
 
@@ -34,7 +34,7 @@ export const createCompletionList = (list) => {
   });
 };
 
-export const resolve = (...path) => {
+export const resolve = (...path: string[]): string => {
   const [root] = workspace.workspaceFolders;
 
   return join(root.uri.fsPath, ...path);

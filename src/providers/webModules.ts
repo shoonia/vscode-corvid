@@ -1,3 +1,4 @@
+import { CompletionItemProvider } from 'vscode';
 import { existsSync, promises } from 'fs';
 import { join, extname, basename } from 'path';
 
@@ -36,7 +37,7 @@ const getItems = async (path) => {
   return items;
 };
 
-export const jsw = {
+export const jsw: CompletionItemProvider = {
   async provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substr(0, position.character);
     const match = /^(?:import.+['"])(backend\/.*)/m.exec(prefix);
