@@ -53,7 +53,7 @@ export const jsw: CompletionItemProvider = {
         const items = await getItems(path);
 
         return createCompletionList(items);
-      } catch (error) { /**/ }
+      } catch { /**/ }
     }
   },
 };

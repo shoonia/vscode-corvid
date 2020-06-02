@@ -38,7 +38,7 @@ const corvidPackage: DescribeCompletionItem[] = (() => {
         });
       }
     }
-  } catch (error) { /**/ }
+  } catch { /**/ }
 
   return [];
 })();

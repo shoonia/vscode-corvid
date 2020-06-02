@@ -24,7 +24,7 @@ const lastModifiedTime = async (path: string) => {
     const { mtimeMs } = await stat(path);
 
     return mtimeMs;
-  } catch (error) { /**/ }
+  } catch { /**/ }
 };
 
 const getCompletions = async (filePath: string) => {
@@ -59,7 +59,7 @@ const getCompletions = async (filePath: string) => {
     cache.set(filePath, { completions, mtimeMs });
 
     return completions;
-  } catch (error) {
+  } catch {
     cache.clear();
   }
 };
