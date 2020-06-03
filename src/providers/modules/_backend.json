@@ -14,7 +14,8 @@
   {
     "name": "import wixMarketing from 'wix-marketing-backend'",
     "kind": 8,
-    "snippet": "wixMarketing from 'wix-marketing-backend';",
+    "snippet": "{ coupons } from 'wix-marketing-backend';",
+    "detail": "{ coupons } from 'wix-marketing-backend'",
     "docs": "The [wix-marketing-backend](https://www.wix.com/corvid/reference/wix-marketing-backend.html) module contains functionality for working with your site's marketing tools from backend code."
   },
   {

@@ -1,7 +1,7 @@
 # Change Log
 
 ## next
-* Improve autocomplete for import npm packages
+* Improve autocomplete for import npm packages and wixMarketing module
 
 ## v2.0.0
 * Migration source code to TypeScript from JavaScript
