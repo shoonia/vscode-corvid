@@ -100,7 +100,7 @@
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-json-schema": "^2.1.0",
-    "rollup": "^2.12.0",
+    "rollup": "^2.12.1",
     "rollup-plugin-terser": "^6.1.0",
     "typescript": "^3.9.3"
   },

@@ -1,5 +1,8 @@
 # Change Log
 
+## next
+* Improve autocomplete for import npm packages
+
 ## v2.0.0
 * Migration source code to TypeScript from JavaScript
 

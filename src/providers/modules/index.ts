@@ -31,7 +31,7 @@ const corvidPackage: DescribeCompletionItem[] = (() => {
           return {
             name: `import ${pkg} from '${name}'`,
             kind: 8,
-            snippet: `${pkg} from '${name}';`,
+            snippet: ['${1:', pkg, `} from '${name}$2';`].join(''),
             detail: `${name} v${version}`,
             docs: 'Corvid Package Manager',
           };
