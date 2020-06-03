@@ -5,7 +5,7 @@ import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 
 const isProd = !process.env.ROLLUP_WATCH;
-const extensions = ['.ts', '.js'];
+const extensions = ['.ts'];
 
 export default {
   input: './src/extension.ts',

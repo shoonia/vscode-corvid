@@ -1,5 +1,4 @@
 /* eslint-disable quotes, comma-dangle */
-
 const { shouldBeError } = require('./util');
 
 describe('executionConfig required', () => {

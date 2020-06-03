@@ -2,14 +2,14 @@
   "name": "vscode-corvid",
   "displayName": "Corvid",
   "description": "The extension to work with corvid-cli. Highlighting .jsw, support jobs.config, autocomplete, snippets.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "publisher": "shoonia",
   "scripts": {
-    "lint": "eslint 'src/**/*.{js,ts}'",
+    "lint": "eslint 'src/**/*.ts'",
     "start": "rollup -c -w",
     "build": "rollup -c",
     "dist": "yarn build && vsce publish",
-    "test": "jest tests/**/*.test.js"
+    "test": "jest tests/**/*.test.ts"
   },
   "main": "./dist/extension.js",
   "icon": "icons/logo.png",
