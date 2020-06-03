@@ -1,5 +1,4 @@
 /* eslint-disable quotes, comma-dangle */
-
 const { shouldBeError, validation } = require('./util');
 
 describe('functionName', () => {
@@ -58,5 +57,4 @@ describe('functionName', () => {
       }, /functionName should match pattern/);
     });
   });
-
 });

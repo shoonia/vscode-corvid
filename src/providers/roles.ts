@@ -2,15 +2,13 @@ import { existsSync, promises } from 'fs';
 import { CompletionItemProvider } from 'vscode';
 import { isFrontend, createCompletionList } from '../util';
 
-interface Items {
-  role: string;
-}
-
 interface WixConnectData {
   data: {
     connections_data: {
       [key: string]: {
-        items: Items[];
+        items: Array<{
+          role: string;
+        }>;
       },
     };
   },

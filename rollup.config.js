@@ -2,9 +2,10 @@
 import { terser } from 'rollup-plugin-terser';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
-import typescript from '@rollup/plugin-typescript';
+import babel from '@rollup/plugin-babel';
 
 const isProd = !process.env.ROLLUP_WATCH;
+const extensions = ['.ts', '.js'];
 
 export default {
   input: './src/extension.ts',
@@ -22,9 +23,15 @@ export default {
     include: './src/**',
   },
   plugins: [
-    typescript(),
+    babel({
+      presets: [
+        '@babel/preset-typescript',
+      ],
+      exclude: /node_modules/,
+      extensions,
+    }),
     commonjs({
-      extensions: ['.js', '.ts'],
+      extensions,
     }),
     json(),
     isProd && terser({
