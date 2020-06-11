@@ -6,7 +6,7 @@ import {
   MarkdownString,
 } from 'vscode';
 
-export interface DescribeCompletionItem {
+export interface IDescribeCompletionItem {
   name: string;
   kind: number;
   snippet?: string;
@@ -22,7 +22,7 @@ export const isFrontend = (path: string) => FRONTEND.test(path);
 export const isString = (value: unknown) => typeof value === 'string';
 export const isObject = (value: unknown) => value !== null && typeof value === 'object';
 
-export const createCompletionList = (list: DescribeCompletionItem[]) => {
+export const createCompletionList = (list: IDescribeCompletionItem[]) => {
   return list.map((item) => {
     const completion = new CompletionItem(item.name, item.kind);
 

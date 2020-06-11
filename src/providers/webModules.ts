@@ -5,14 +5,14 @@ import { join, extname, basename } from 'path';
 import {
   createCompletionList,
   resolve,
-  DescribeCompletionItem,
+  IDescribeCompletionItem,
 } from '../util';
 
 const { readdir, lstat } = promises;
 
 const getItems = async (path: string) => {
   const ext = '.jsw';
-  const items: DescribeCompletionItem[] = [];
+  const items: IDescribeCompletionItem[] = [];
 
   if (existsSync(path)) {
     const files = await readdir(path);

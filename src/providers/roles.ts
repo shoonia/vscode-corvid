@@ -2,7 +2,7 @@ import { existsSync, promises } from 'fs';
 import { CompletionItemProvider } from 'vscode';
 import { isFrontend, createCompletionList } from '../util';
 
-interface WixConnectData {
+interface IConnectData {
   data: {
     connections_data: {
       [key: string]: {
@@ -40,7 +40,7 @@ const getCompletions = async (filePath: string) => {
     const file = await readFile(filePath, 'utf8');
     const { content } = JSON.parse(file);
     const json = Buffer.from(content.content, 'base64').toString('utf8');
-    const { data } = JSON.parse(json) as WixConnectData;
+    const { data } = JSON.parse(json) as IConnectData;
 
     const items = Object.values(data.connections_data)
       .map((element) => {

@@ -9,7 +9,7 @@ import {
   createCompletionList,
   resolve,
   isObject,
-  DescribeCompletionItem,
+  IDescribeCompletionItem,
 } from '../../util';
 
 const createModuleName = (str: string): string => str.replace(
@@ -17,7 +17,7 @@ const createModuleName = (str: string): string => str.replace(
   (s) => s.replace(/\W/, '').toUpperCase(),
 );
 
-const corvidPackage: DescribeCompletionItem[] = (() => {
+const corvidPackage: IDescribeCompletionItem[] = (() => {
   try {
     const path = resolve('src/corvid-package.json');
 
