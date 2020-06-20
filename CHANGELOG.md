@@ -1,6 +1,6 @@
 # Change Log
 
-## next
+## v2.1.0
 * Improve autocomplete for import npm packages and wixMarketing module
 
 ## v2.0.0

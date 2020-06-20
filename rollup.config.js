@@ -24,6 +24,7 @@ export default {
   },
   plugins: [
     babel({
+      babelHelpers: 'bundled',
       presets: [
         '@babel/preset-typescript',
       ],
