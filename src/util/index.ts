@@ -19,8 +19,8 @@ const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
 
 export const isBackend = (path: string) => BACKEND.test(path);
 export const isFrontend = (path: string) => FRONTEND.test(path);
-export const isString = (value: unknown) => typeof value === 'string';
-export const isObject = (value: unknown) => value !== null && typeof value === 'object';
+export const isString = (val: unknown): val is string => typeof val === 'string';
+export const isObject = (val: unknown) => typeof val === 'object' && val !== null;
 
 export const createCompletionList = (list: IDescribeCompletionItem[]) => {
   return list.map((item) => {

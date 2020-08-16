@@ -36,15 +36,14 @@ export default {
     }),
     json(),
     isProd && terser({
-      ecma: 8,
+      ecma: 2020,
       module: true,
       toplevel: true,
       parse: {
-        ecma: 8,
+        ecma: 2020,
       },
       compress: {
-        ecma: 8,
-        warnings: false,
+        ecma: 2020,
         comparisons: false,
         inline: 2,
         drop_console: true,
@@ -56,8 +55,8 @@ export default {
         unsafe: true,
         unsafe_math: true,
       },
-      output: {
-        ecma: 8,
+      format: {
+        ecma: 2020,
         comments: false,
       },
     }),
