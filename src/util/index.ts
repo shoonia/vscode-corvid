@@ -4,6 +4,7 @@ import {
   CompletionItem,
   SnippetString,
   MarkdownString,
+  WorkspaceFolder,
 } from 'vscode';
 
 export interface IDescribeCompletionItem {
@@ -46,7 +47,7 @@ export const resolve = (...path: string[]) => {
   const folders = workspace.workspaceFolders;
 
   if (Array.isArray(folders)) {
-    const [root] = folders;
+    const [root]: WorkspaceFolder[] = folders;
 
     return join(root.uri.fsPath, ...path);
   }
