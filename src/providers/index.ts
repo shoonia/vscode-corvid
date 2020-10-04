@@ -25,9 +25,11 @@ export const getProviders = () => {
   if (config.get('import')) {
     providers.push(register(modules, ' '));
   }
+
   if (config.get('$w')) {
     providers.push(register(roles, '#'));
   }
+
   if (config.get('jsw')) {
     providers.push(register(jsw, '/'));
   }

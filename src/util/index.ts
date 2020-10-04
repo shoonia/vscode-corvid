@@ -30,9 +30,11 @@ export const createCompletionList = (list: IDescribeCompletionItem[]) => {
     if (isString(item.snippet)) {
       completion.insertText = new SnippetString(item.snippet);
     }
+
     if (isString(item.docs)) {
       completion.documentation = new MarkdownString(item.docs);
     }
+
     if (isString(item.detail)) {
       completion.detail = item.detail;
     }
