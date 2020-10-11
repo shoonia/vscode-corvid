@@ -26,7 +26,6 @@ const getItems = async (path: string) => {
           name,
           kind: 18,
         });
-
       } else if (extname(name) === ext) {
         items.push({
           name: basename(name, ext),
@@ -48,8 +47,8 @@ export const jsw: CompletionItemProvider = {
 
     if (Array.isArray(match)) {
       try {
-        const dir = match[1].split('/').slice(0, -1).join('/');
-        const path = resolve('src', dir);
+        const dir = match[1].split('/').slice(0, -1);
+        const path = resolve('src', ...dir);
         const items = await getItems(path);
 
         return createCompletionList(items);

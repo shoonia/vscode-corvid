@@ -18,12 +18,12 @@ export interface IDescribeCompletionItem {
 const BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
 const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
 
-export const isBackend = (path: string) => BACKEND.test(path);
-export const isFrontend = (path: string) => FRONTEND.test(path);
+export const isBackend = (path: string): boolean => BACKEND.test(path);
+export const isFrontend = (path: string): boolean => FRONTEND.test(path);
 export const isString = (val: unknown): val is string => typeof val === 'string';
-export const isObject = (val: unknown) => typeof val === 'object' && val !== null;
+export const isObject = (val: unknown): val is Record<string, unknown> => typeof val === 'object' && val !== null;
 
-export const createCompletionList = (list: IDescribeCompletionItem[]) => {
+export const createCompletionList = (list: IDescribeCompletionItem[]): CompletionItem[] => {
   return list.map((item) => {
     const completion = new CompletionItem(item.name, item.kind);
 
@@ -31,21 +31,19 @@ export const createCompletionList = (list: IDescribeCompletionItem[]) => {
       completion.insertText = new SnippetString(item.snippet);
     }
 
+    if (isString(item.detail)) {
+      completion.detail = item.detail;
+    }
+
     if (isString(item.docs)) {
       completion.documentation = new MarkdownString(item.docs);
     }
 
-    if (isString(item.detail)) {
-      completion.detail = item.detail;
-    }
-    // if (Array.isArray(item.commitCharacters)) {
-    //   completion.commitCharacters = item.commitCharacters;
-    // }
     return completion;
   });
 };
 
-export const resolve = (...path: string[]) => {
+export const resolve = (...path: string[]): string => {
   const folders = workspace.workspaceFolders;
 
   if (Array.isArray(folders)) {

@@ -19,7 +19,7 @@ const register = (provider: CompletionItemProvider, trigger: string) => {
   );
 };
 
-export const getProviders = () => {
+export const getProviders = (): Disposable[] => {
   const providers: Disposable[] = [];
 
   if (config.get('import')) {
