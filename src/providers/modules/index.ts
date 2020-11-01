@@ -19,7 +19,7 @@ const createModuleName = (str: string): string => str.replace(
 
 const corvidPackage: IDescribeCompletionItem[] = (() => {
   try {
-    const path = resolve('src/corvid-package.json');
+    const path = resolve('src', 'corvid-package.json');
 
     if (existsSync(path)) {
       const { dependencies } = JSON.parse(readFileSync(path, 'utf8'));
