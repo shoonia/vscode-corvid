@@ -3,85 +3,85 @@
     "name": "import wixAnimations from 'wix-animations'",
     "kind": 8,
     "snippet": "{ timeline } from 'wix-animations';",
-    "docs": "The [wix-animations](https://www.wix.com/corvid/reference/wix-animations.html) module contains functionality for working with animations."
+    "docs": "The [wix-animations](https://www.wix.com/corvid/reference/wix-animations) module contains functionality for working with animations."
   },
   {
     "name": "import wixBookings from 'wix-bookings'",
     "kind": 8,
     "snippet": "wixBookings from 'wix-bookings';",
-    "docs": "The [wix-bookings](https://www.wix.com/corvid/reference/wix-bookings.html) module contains functionality for working with bookings from client-side code."
+    "docs": "The [wix-bookings](https://www.wix.com/corvid/reference/wix-bookings) module contains functionality for working with bookings from client-side code."
   },
   {
     "name": "import wixLocation from 'wix-location'",
     "kind": 8,
     "snippet": "wixLocation from 'wix-location';",
-    "docs": "The [wix-location](https://www.wix.com/corvid/reference/wix-location.html) module contains functionality for getting information about the URL of the current page and for navigating to other pages."
+    "docs": "The [wix-location](https://www.wix.com/corvid/reference/wix-location) module contains functionality for getting information about the URL of the current page and for navigating to other pages."
   },
   {
     "name": "import wixPaidPlans from 'wix-paid-plans'",
     "kind": 8,
     "snippet": "wixPaidPlans from 'wix-paid-plans';",
-    "docs": "The [wix-paid-plans](https://www.wix.com/corvid/reference/wix-paid-plans.html) module contains functionality for working with paid plans from client-side code."
+    "docs": "The [wix-paid-plans](https://www.wix.com/corvid/reference/wix-paid-plans) module contains functionality for working with paid plans from client-side code."
   },
   {
     "name": "import wixPay from 'wix-pay'",
     "kind": 8,
     "snippet": "wixPay from 'wix-pay';",
-    "docs": "The [wix-pay](https://www.wix.com/corvid/reference/wix-pay.html) module contains functionality for working with payments from client-side code."
+    "docs": "The [wix-pay](https://www.wix.com/corvid/reference/wix-pay) module contains functionality for working with payments from client-side code."
   },
   {
     "name": "import wixSite from 'wix-site'",
     "kind": 8,
     "snippet": "wixSite from 'wix-site';",
-    "docs": "The [wix-site](https://www.wix.com/corvid/reference/wix-site.html) module contains functionality for obtaining information about your site and its pages."
+    "docs": "The [wix-site](https://www.wix.com/corvid/reference/wix-site) module contains functionality for obtaining information about your site and its pages."
   },
   {
     "name": "import wixStorage from 'wix-storage'",
     "kind": 8,
     "snippet": "{ ${1|local,session,memory|} } from 'wix-storage';",
     "detail": "{ local } from 'wix-storage'\n{ session } from 'wix-storage'\n{ memory } from 'wix-storage'",
-    "docs": "The [wix-storage](https://www.wix.com/corvid/reference/wix-storage.html) module contains functionality for the persistent storage of key/value data in the site visitor's browser."
+    "docs": "The [wix-storage](https://www.wix.com/corvid/reference/wix-storage) module contains functionality for the persistent storage of key/value data in the site visitor's browser."
   },
   {
     "name": "import wixStores from 'wix-stores'",
     "kind": 8,
     "snippet": "wixStores from 'wix-stores';",
-    "docs": "The [wix-stores](https://www.wix.com/corvid/reference/wix-stores.html) module contains functionality for working with your site's store from from client-side code."
+    "docs": "The [wix-stores](https://www.wix.com/corvid/reference/wix-stores) module contains functionality for working with your site's store from from client-side code."
   },
   {
     "name": "import wixUsers from 'wix-users'",
     "kind": 8,
     "snippet": "wixUsers from 'wix-users';",
-    "docs": "The [wix-users](https://www.wix.com/corvid/reference/wix-users.html) module contains functionality for working with your site's users from client-side code."
+    "docs": "The [wix-users](https://www.wix.com/corvid/reference/wix-users) module contains functionality for working with your site's users from client-side code."
   },
   {
     "name": "import wixWindow from 'wix-window'",
     "kind": 8,
     "snippet": "wixWindow from 'wix-window';",
-    "docs": "The [wix-window](https://www.wix.com/corvid/reference/wix-window.html) module contains functionality that pertains to the current browser window."
+    "docs": "The [wix-window](https://www.wix.com/corvid/reference/wix-window) module contains functionality that pertains to the current browser window."
   },
   {
     "name": "import wixSeo from 'wix-seo'",
     "kind": 8,
     "snippet": "wixSeo from 'wix-seo';",
-    "docs": "The [wix-seo](https://www.wix.com/corvid/reference/wix-seo.html) module contains functionality for working with your site's SEO from client-side code."
+    "docs": "The [wix-seo](https://www.wix.com/corvid/reference/wix-seo) module contains functionality for working with your site's SEO from client-side code."
   },
   {
     "name": "import wixEvents from 'wix-events'",
     "kind": 8,
     "snippet": "wixEvents from 'wix-events';",
-    "docs": "The [wix-events](https://www.wix.com/corvid/reference/wix-events.html) module contains functionality for working with Wix Events from client-side code."
+    "docs": "The [wix-events](https://www.wix.com/corvid/reference/wix-events) module contains functionality for working with Wix Events from client-side code."
   },
   {
     "name": "import wixSearch from 'wix-search'",
     "kind": 8,
     "snippet": "wixSearch from 'wix-search';",
-    "docs": "The [wix-search](https://www.wix.com/corvid/reference/wix-search.html) module contains functionality for searching a site."
+    "docs": "The [wix-search](https://www.wix.com/corvid/reference/wix-search) module contains functionality for searching a site."
   },
   {
     "name": "import wixRealtime from 'wix-realtime'",
     "kind": 8,
     "snippet": "wixRealtime from 'wix-realtime';",
-    "docs": "The [wix-realtime](https://www.wix.com/corvid/reference/wix-realtime.html) module contains functionality for publishing messages on channels that site visitors can subscribe to."
+    "docs": "The [wix-realtime](https://www.wix.com/corvid/reference/wix-realtime) module contains functionality for publishing messages on channels that site visitors can subscribe to."
   }
 ]
