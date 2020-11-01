@@ -1,5 +1,8 @@
 # Change Log
 
+## v2.2.0
+* Updated the links to documentation
+
 ## v2.1.0
 * Improve autocomplete for import npm packages and wixMarketing module
 
