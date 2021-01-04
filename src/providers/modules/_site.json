@@ -3,12 +3,12 @@
     "name": "import { fetch, getJSON } from 'wix-fetch'",
     "kind": 8,
     "snippet": "{ ${1|fetch,getJSON|} } from 'wix-fetch';",
-    "docs": "An implementation of the standard Javascript Fetch API which can be used in public and backend code for fetching resources from 3rd party services using HTTPS.\n\n[wix-fetch](https://www.wix.com/corvid/reference/wix-fetch)"
+    "docs": "An implementation of the standard Javascript Fetch API which can be used in public and backend code for fetching resources from 3rd party services using HTTPS.\n\n[wix-fetch](https://www.wix.com/velo/reference/wix-fetch)"
   },
   {
     "name": "import wixData from 'wix-data'",
     "kind": 8,
     "snippet": "wixData from 'wix-data';",
-    "docs": "The [wix-data](https://www.wix.com/corvid/reference/wix-data) module contains functionality for working with data in collections."
+    "docs": "The [wix-data](https://www.wix.com/velo/reference/wix-data) module contains functionality for working with data in collections."
   }
 ]
