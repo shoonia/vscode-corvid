@@ -77,7 +77,7 @@
     "name": "import wixSecretsBackend from 'wix-secrets-backend'",
     "kind": 8,
     "snippet": "{ getSecret } from 'wix-secrets-backend';",
-    "docs": "The [wix-secrets-backend](https://www.wix.com/velo/reference/wix-secrets-backend) module contains functionality for retrieving secrets you safely store in your site's [Secrets Manager](https://support.wix.com/en/article/corvid-about-the-secrets-manager).\n\nNote: This feature is not yet available to all users."
+    "docs": "The [wix-secrets-backend](https://www.wix.com/velo/reference/wix-secrets-backend) module contains functionality for retrieving secrets you safely store in your site's [Secrets Manager](https://support.wix.com/en/article/velo-about-the-secrets-manager).\n\nNote: This feature is not yet available to all users."
   },
   {
     "name": "import wixRealtimeBackend from 'wix-realtime-backend'",

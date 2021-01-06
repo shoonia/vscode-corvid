@@ -31,7 +31,7 @@ const getItems = async (path: string) => {
           name: basename(name, ext),
           kind: 16,
           detail: name,
-          docs: 'Corvid Web Module',
+          docs: 'Web Module',
         });
       }
     }

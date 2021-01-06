@@ -9,7 +9,7 @@ import { modules } from './modules';
 import { roles } from './roles';
 import { jsw } from './webModules';
 
-const config = workspace.getConfiguration('corvid.autocomplete', null);
+const config = workspace.getConfiguration('velo.autocomplete', null);
 
 const register = (provider: CompletionItemProvider, trigger: string) => {
   return languages.registerCompletionItemProvider(

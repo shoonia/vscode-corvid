@@ -1,4 +1,4 @@
-# Corvid
+# Velo
 
 [![extension version](https://vsmarketplacebadge.apphb.com/version/shoonia.vscode-corvid.svg)](https://marketplace.visualstudio.com/items?itemName=shoonia.vscode-corvid)
 
@@ -11,9 +11,9 @@ This extension contributes the following variables to the [settings](https://cod
 
 | Name                         | Description                                 | Default
 | ---------------------------  | ------------------------------------------- | ------- |
-| `corvid.autocomplete.$w`     | on/off autocomplete for `$w()` selectors.   | false
-| `corvid.autocomplete.import` | on/off autocomplete for import Wix modules. | true
-| `corvid.autocomplete.jsw`    | on/off autocomplete for Corvid web modules. | true
+| `velo.autocomplete.$w`     | on/off autocomplete for `$w()` selectors.   | false
+| `velo.autocomplete.import` | on/off autocomplete for import Wix modules. | true
+| `velo.autocomplete.jsw`    | on/off autocomplete for Web Modules. | true
 
 ## Snippets List
 

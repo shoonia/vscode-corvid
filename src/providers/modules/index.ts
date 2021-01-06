@@ -17,7 +17,7 @@ const createModuleName = (str: string): string => str.replace(
   (s) => s.replace(/\W/, '').toUpperCase(),
 );
 
-const corvidPackage: IDescribeCompletionItem[] = (() => {
+const veloPackages: IDescribeCompletionItem[] = (() => {
   try {
     const path = resolve('src', 'corvid-package.json');
 
@@ -33,7 +33,7 @@ const corvidPackage: IDescribeCompletionItem[] = (() => {
             kind: 8,
             snippet: ['${1:', pkg, `} from '${name}$2';`].join(''),
             detail: `${name} v${version}`,
-            docs: 'Corvid Package Manager',
+            docs: 'Package Manager',
           };
         });
       }
@@ -43,7 +43,7 @@ const corvidPackage: IDescribeCompletionItem[] = (() => {
   return [];
 })();
 
-const common = createCompletionList([...site, ...corvidPackage]);
+const common = createCompletionList([...site, ...veloPackages]);
 const frontendList = createCompletionList(frontend).concat(common);
 const backendList = createCompletionList(backend).concat(common);
 

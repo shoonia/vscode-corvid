@@ -1,5 +1,8 @@
 # Change Log
 
+## v3.0.0
+* Rename to Velo from Corvid
+
 ## v2.2.0
 * Updated the links to documentation
 

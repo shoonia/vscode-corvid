@@ -72,7 +72,7 @@
       "import { ${1|ok,notFound,next,redirect,forbidden,router,sendStatus,afterRouter,afterSitemap,beforeRouter,customizeQuery,sitemap|} } from 'wix-router';"
     ]
   },
-  "Corvid Web Modules": {
+  "Web Modules": {
     "prefix": "jsw",
     "scope": "javascript",
     "body": [
