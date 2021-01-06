@@ -12,7 +12,7 @@
     "test": "tsc --noEmit && jest tests/**/*.test.ts"
   },
   "main": "./dist/extension.js",
-  "icon": "icons/logo.png",
+  "icon": "icons/velo.png",
   "activationEvents": [
     "workspaceContains:.corvid/corvidrc.json",
     "workspaceContains:**/*.jsw",
