@@ -4,7 +4,7 @@
 
 The extension to work with [corvid-cli](https://github.com/wix-incubator/corvid). Highlighting `.jsw`, `.wix`, support `jobs.config`, autocomplete, snippets.
 
-<img src="https://raw.githubusercontent.com/shoonia/vscode-corvid/master/icons/exemple-1.png" alt="vscode-corvid" width="500" />
+<img src="https://static.wixstatic.com/shapes/e3b156_42e6f1f2d7ad42278e3d9e4db6e05d92.svg" alt="vscode-corvid" width="600" />
 
 ## Settings Options
 This extension contributes the following variables to the [settings](https://code.visualstudio.com/docs/getstarted/settings):
