@@ -11,9 +11,9 @@ This extension contributes the following variables to the [settings](https://cod
 
 | Name                         | Description                                 | Default
 | ---------------------------  | ------------------------------------------- | ------- |
-| `velo.autocomplete.$w`     | on/off autocomplete for `$w()` selectors.   | false
-| `velo.autocomplete.import` | on/off autocomplete for import Wix modules. | true
-| `velo.autocomplete.jsw`    | on/off autocomplete for Web Modules. | true
+| `velo.autocomplete.$w`       | on/off autocomplete for `$w()` selectors.   | false
+| `velo.autocomplete.import`   | on/off autocomplete for import Wix modules. | true
+| `velo.autocomplete.jsw`      | on/off autocomplete for Web Modules.        | true
 
 ## Snippets List
 

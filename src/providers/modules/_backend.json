@@ -6,6 +6,13 @@
     "docs": "The [wix-billing-backend](https://www.wix.com/velo/reference/wix-billing-backend) module contains functionality for working with billing features, such as price quotes and invoices."
   },
   {
+    "name": "import wixBookingsBackend from 'wix-bookings-backend'",
+    "kind": 8,
+    "snippet": "{ bookings } from 'wix-bookings-backend';",
+    "detail": "{ bookings } from 'wix-bookings-backend'",
+    "docs": "The [wix-bookings-backend](https://www.wix.com/velo/reference/wix-bookings-backend) module contains functionality for working with bookings from backend code."
+  },
+  {
     "name": "import wixCRM from 'wix-crm-backend'",
     "kind": 8,
     "snippet": "wixCRM from 'wix-crm-backend';",

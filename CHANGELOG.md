@@ -1,5 +1,8 @@
 # Change Log
 
+## v3.1.0
+* Added `wix-bookings-backend` module to import completion.
+
 ## v3.0.0
 * Rename to Velo from Corvid
 

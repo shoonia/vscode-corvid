@@ -1,38 +1,44 @@
 import { existsSync, promises } from 'fs';
-import { CompletionItemProvider } from 'vscode';
+import { CompletionItem, CompletionItemProvider } from 'vscode';
 import { isFrontend, createCompletionList } from '../util';
 
 interface IConnectData {
   data: {
     connections_data: {
       [key: string]: {
-        items: Array<{
+        items: {
           role: string;
-        }>;
+        }[];
       },
     };
   },
 }
 
 const { readFile, stat } = promises;
-const cache = new Map();
 
-const lastModifiedTime = async (path: string) => {
+const cache = new Map<string, [
+  completions: CompletionItem[],
+  lastUpdate: number,
+]>();
+
+const lastModifiedTime = async (path: string): Promise<number> => {
   try {
     const { mtimeMs } = await stat(path);
 
     return mtimeMs;
-  } catch { /**/ }
+  } catch {
+    return 0;
+  }
 };
 
 const getCompletions = async (filePath: string) => {
   const mtimeMs = await lastModifiedTime(filePath);
 
   if (cache.has(filePath)) {
-    const data = cache.get(filePath);
+    const [completions, lastUpdate] = cache.get(filePath) || [];
 
-    if (data.mtimeMs === mtimeMs) {
-      return data.completions;
+    if (mtimeMs === lastUpdate) {
+      return completions;
     }
   }
 
@@ -54,7 +60,7 @@ const getCompletions = async (filePath: string) => {
 
     const completions = createCompletionList(items);
 
-    cache.set(filePath, { completions, mtimeMs });
+    cache.set(filePath, [completions, mtimeMs]);
 
     return completions;
   } catch {
