@@ -1,5 +1,8 @@
 # Change Log
 
+## v3.2.0
+* Added `wix-pricing-plans-backend` module to import completion.
+
 ## v3.1.0
 * Added `wix-bookings-backend` module to import completion.
 

@@ -91,5 +91,11 @@
     "kind": 8,
     "snippet": "{ permissionsRouter$1, publish$2 } from 'wix-realtime-backend';",
     "docs": "The [wix-realtime](https://www.wix.com/velo/reference/wix-realtime-backend) module contains functionality for publishing messages on channels that site visitors can subscribe to and for managing channel permissions."
+  },
+  {
+    "name": "import wixPricingPlansBackend from 'wix-pricing-plans-backend'",
+    "kind": 8,
+    "snippet": "wixPricingPlansBackend from 'wix-pricing-plans-backend';",
+    "docs": "The [wix-pricing-plans-backend](https://www.wix.com/velo/reference/wix-pricing-plans-backend) module contains functionality for managing your site's pricing plans from backend code."
   }
 ]
