@@ -1,5 +1,8 @@
 # Change Log
 
+## v3.3.0
+* Enable autocomplete for `$w()` by default.
+
 ## v3.2.0
 * Added `wix-pricing-plans-backend` module to import completion.
 
