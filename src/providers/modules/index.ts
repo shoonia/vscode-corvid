@@ -1,4 +1,4 @@
-import { CompletionItemProvider } from 'vscode';
+import type { CompletionItemProvider } from 'vscode';
 import { existsSync, readFileSync } from 'fs';
 
 import backend from './_backend.json';

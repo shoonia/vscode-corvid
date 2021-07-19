@@ -1,4 +1,4 @@
-import { CompletionItemProvider } from 'vscode';
+import type { CompletionItemProvider } from 'vscode';
 import { existsSync, promises } from 'fs';
 import { join, extname, basename } from 'path';
 

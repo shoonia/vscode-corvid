@@ -1,5 +1,5 @@
 import { existsSync, promises } from 'fs';
-import { CompletionItem, CompletionItemProvider } from 'vscode';
+import type { CompletionItem, CompletionItemProvider } from 'vscode';
 import { isFrontend, createCompletionList } from '../util';
 
 interface IConnectData {
