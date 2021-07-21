@@ -83,7 +83,7 @@
   {
     "name": "import wixSecretsBackend from 'wix-secrets-backend'",
     "kind": 8,
-    "snippet": "{ getSecret } from 'wix-secrets-backend';",
+    "snippet": "{ ${1|getSecret,listSecretInfo,createSecret,deleteSecret,updateSecre|} } from 'wix-secrets-backend';",
     "docs": "The [wix-secrets-backend](https://www.wix.com/velo/reference/wix-secrets-backend) module contains functionality for retrieving secrets you safely store in your site's [Secrets Manager](https://support.wix.com/en/article/velo-about-the-secrets-manager).\n\nNote: This feature is not yet available to all users."
   },
   {
@@ -97,5 +97,11 @@
     "kind": 8,
     "snippet": "wixPricingPlansBackend from 'wix-pricing-plans-backend';",
     "docs": "The [wix-pricing-plans-backend](https://www.wix.com/velo/reference/wix-pricing-plans-backend) module contains functionality for managing your site's pricing plans from backend code."
+  },
+  {
+    "name": "import { wixEvents } from 'wix-events-backend'",
+    "kind": 8,
+    "snippet": "{ wixEvents } from 'wix-events-backend';",
+    "docs": "The [wix-events-backend](https://www.wix.com/velo/reference/wix-events-backend) provides functionality for creating, updating, and managing Wix events."
   }
 ]

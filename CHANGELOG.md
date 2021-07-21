@@ -1,5 +1,9 @@
 # Change Log
 
+## v3.4.0
+* Added `wix-events-backend` module to import completion
+* Improve autocomplete for `wix-secrets-backend` module imports
+
 ## v3.3.0
 * Enable autocomplete for `$w()` by default.
 
