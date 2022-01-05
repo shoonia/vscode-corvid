@@ -9,13 +9,17 @@
   ],
   "env": {
     "node": true,
-    "es6": true,
-    "jest": true
+    "es6": true
   },
   "parserOptions": {
     "sourceType": "module",
-    "ecmaVersion": 2020
+    "ecmaVersion": 2022
   },
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "tests/"
+  ],
   "rules": {
     "comma-dangle": [
       "error",

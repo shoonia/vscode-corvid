@@ -13,6 +13,8 @@ export default {
     file: './dist/extension.js',
     format: 'cjs',
     sourcemap: false,
+    interop: false,
+    esModule: false,
   },
   external: [
     'fs',
