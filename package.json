@@ -23,12 +23,6 @@
       {
         "title": "Velo",
         "properties": {
-          "velo.autocomplete.$w": {
-            "scope": "resource",
-            "type": "boolean",
-            "default": true,
-            "description": "on/off autocomplete for $w() selectors"
-          },
           "velo.autocomplete.import": {
             "scope": "resource",
             "type": "boolean",
@@ -55,12 +49,6 @@
         "id": "jsonc",
         "extensions": [
           "jobs.config"
-        ]
-      },
-      {
-        "id": "json",
-        "extensions": [
-          ".wix"
         ]
       }
     ],

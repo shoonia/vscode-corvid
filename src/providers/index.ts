@@ -6,7 +6,6 @@ import {
 } from 'vscode';
 
 import { modules } from './modules';
-import { roles } from './roles';
 import { jsw } from './webModules';
 
 const config = workspace.getConfiguration('velo.autocomplete', null);
@@ -24,10 +23,6 @@ export const getProviders = (): Disposable[] => {
 
   if (config.get('import')) {
     providers.push(register(modules, ' '));
-  }
-
-  if (config.get('$w')) {
-    providers.push(register(roles, '#'));
   }
 
   if (config.get('jsw')) {
