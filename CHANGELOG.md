@@ -1,5 +1,9 @@
 # Change Log
 
+## v4.0.0
+* Remove support of [corvid-cli](https://github.com/wix-incubator/corvid)
+* Add support for [velo-filesystem](https://github.com/shoonia/velo-filesystem)
+
 ## v3.4.0
 * Added `wix-events-backend` module to import completion
 * Improve autocomplete for `wix-secrets-backend` module imports
