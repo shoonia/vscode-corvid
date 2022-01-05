@@ -1,7 +1,7 @@
 {
   "name": "vscode-corvid",
   "displayName": "Velo",
-  "description": "The extension to work with corvid-cli. Highlighting .jsw, support jobs.config, autocomplete, snippets",
+  "description": "The extension to work with velo-filesystem chrome extension. Highlighting .jsw, support jobs.config, autocomplete, snippets",
   "version": "3.4.0",
   "publisher": "shoonia",
   "scripts": {
@@ -13,7 +13,7 @@
   "main": "./dist/extension.js",
   "icon": "icons/velo.png",
   "activationEvents": [
-    "workspaceContains:.corvid/corvidrc.json",
+    "workspaceContains:velofilesystemrc",
     "workspaceContains:**/*.jsw",
     "workspaceContains:jobs.config"
   ],
@@ -113,7 +113,7 @@
   "keywords": [
     "wix",
     "corvid",
-    "corvid-cli",
+    "velo-filesystem",
     "wixcode",
     "velo"
   ],
