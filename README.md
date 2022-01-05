@@ -5,6 +5,8 @@
 
 The extension to work with [velo-filesystem](https://github.com/shoonia/velo-filesystem) chrome extension. Highlighting `.jsw`, support `jobs.config`, autocomplete, snippets.
 
+Install: [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=shoonia.vscode-corvid)
+
 <img src="https://raw.githubusercontent.com/shoonia/vscode-corvid/master/icons/velo.png" alt="Velo vscode" width="150" align="right" />
 
 ## Settings Options
