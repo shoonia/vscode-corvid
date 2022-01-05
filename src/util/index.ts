@@ -1,10 +1,10 @@
 import { join } from 'path';
 import {
+  type WorkspaceFolder,
   workspace,
   CompletionItem,
-  SnippetString,
   MarkdownString,
-  WorkspaceFolder,
+  SnippetString,
 } from 'vscode';
 
 export interface IDescribeCompletionItem {
@@ -16,7 +16,7 @@ export interface IDescribeCompletionItem {
 }
 
 const BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
-const FRONTEND = /(.+)src\/(pages|lightboxes|public)\/(.+)\.js$/;
+const FRONTEND = /(.+)src\/(pages|public)\/(.+)\.js$/;
 
 export const isBackend = (path: string): boolean => BACKEND.test(path);
 export const isFrontend = (path: string): boolean => FRONTEND.test(path);
