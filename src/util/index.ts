@@ -15,11 +15,9 @@ export interface IDescribeCompletionItem {
   docs?: string;
 }
 
-const BACKEND = /(.+)src\/backend\/(.+)\.jsw?$/;
-const FRONTEND = /(.+)src\/(pages|public)\/(.+)\.js$/;
+const JSW = /(.+)src\/backend\/(.+)\.jsw$/;
 
-export const isBackend = (path: string): boolean => BACKEND.test(path);
-export const isFrontend = (path: string): boolean => FRONTEND.test(path);
+export const isBackend = (path: string): boolean => JSW.test(path);
 export const isString = (val: unknown): val is string => typeof val === 'string';
 export const isObject = (val: unknown): val is Record<string, unknown> => typeof val === 'object' && val !== null;
 
