@@ -15,6 +15,9 @@ export default {
     sourcemap: false,
     interop: false,
     esModule: false,
+    generatedCode: {
+      constBindings: true,
+    },
   },
   external: [
     'fs',
