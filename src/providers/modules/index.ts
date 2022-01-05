@@ -5,11 +5,11 @@ import backend from './_backend.json';
 import frontend from './_frontend.json';
 import site from './_site.json';
 import {
+  type IDescribeCompletionItem,
   isBackend,
   createCompletionList,
   resolve,
   isObject,
-  IDescribeCompletionItem,
 } from '../../util';
 
 const createModuleName = (str: string): string => str.replace(
@@ -49,7 +49,7 @@ const backendList = createCompletionList(backend).concat(common);
 
 export const modules: CompletionItemProvider = {
   provideCompletionItems(doc, position) {
-    const prefix = doc.lineAt(position).text.substr(0, position.character);
+    const prefix = doc.lineAt(position).text.substring(0, position.character);
 
     if (/^import\s/.test(prefix)) {
       return isBackend(doc.uri.path) ? backendList : frontendList;

@@ -1,8 +1,8 @@
 import {
+  type CompletionItemProvider,
+  type Disposable,
   languages,
   workspace,
-  CompletionItemProvider,
-  Disposable,
 } from 'vscode';
 
 import { modules } from './modules';

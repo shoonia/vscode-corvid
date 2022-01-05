@@ -3,9 +3,9 @@ import { existsSync, promises } from 'fs';
 import { join, extname, basename } from 'path';
 
 import {
+  type IDescribeCompletionItem,
   createCompletionList,
   resolve,
-  IDescribeCompletionItem,
 } from '../util';
 
 const { readdir, lstat } = promises;
@@ -42,7 +42,7 @@ const getItems = async (path: string) => {
 
 export const jsw: CompletionItemProvider = {
   async provideCompletionItems(doc, position) {
-    const prefix = doc.lineAt(position).text.substr(0, position.character);
+    const prefix = doc.lineAt(position).text.substring(0, position.character);
     const match = /^(?:import.+['"])(backend\/.*)/m.exec(prefix);
 
     if (Array.isArray(match)) {

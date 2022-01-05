@@ -74,7 +74,7 @@ export const roles: CompletionItemProvider = {
       return;
     }
 
-    const prefix = doc.lineAt(position).text.substr(0, position.character).trim();
+    const prefix = doc.lineAt(position).text.substring(0, position.character).trim();
 
     if (/^[^$(a-z)+]\(['"`]#[a-z\d]+['"`]\)/i.test(prefix)) {
       return;
