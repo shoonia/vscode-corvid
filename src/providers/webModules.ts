@@ -1,5 +1,6 @@
 import type { CompletionItemProvider } from 'vscode';
-import { existsSync, promises } from 'fs';
+import { existsSync } from 'fs';
+import { readdir, lstat} from 'fs/promises';
 import { join, extname, basename } from 'path';
 
 import {
@@ -8,13 +9,14 @@ import {
   resolve,
 } from '../util';
 
-const { readdir, lstat } = promises;
-
-const getItems = async (path: string) => {
-  const ext = '.jsw';
+const getItems = async (match: RegExpExecArray, isJSW: boolean) => {
   const items: IDescribeCompletionItem[] = [];
 
+  const dir = match[1].split('/').slice(0, -1);
+  const path = resolve('src', ...dir);
+
   if (existsSync(path)) {
+    const ext = isJSW ? '.jsw' : '.js';
     const files = await readdir(path);
 
     for (const name of files) {
@@ -31,7 +33,7 @@ const getItems = async (path: string) => {
           name: basename(name, ext),
           kind: 16,
           detail: name,
-          docs: 'Velo Web Modules',
+          docs: isJSW ? 'Velo Web Modules' : 'Public Files',
         });
       }
     }
@@ -43,13 +45,21 @@ const getItems = async (path: string) => {
 export const jsw: CompletionItemProvider = {
   async provideCompletionItems(doc, position) {
     const prefix = doc.lineAt(position).text.substring(0, position.character);
-    const match = /^(?:import.+['"])(backend\/.*)/m.exec(prefix);
+    const matchBack = /^(?:import.+['"])(backend\/.*)/m.exec(prefix);
 
-    if (Array.isArray(match)) {
+    if (Array.isArray(matchBack)) {
       try {
-        const dir = match[1].split('/').slice(0, -1);
-        const path = resolve('src', ...dir);
-        const items = await getItems(path);
+        const items = await getItems(matchBack, true);
+
+        return createCompletionList(items);
+      } catch { /**/ }
+    }
+
+    const mathcPub = /^(?:import.+['"])(public\/.*)/m.exec(prefix);
+
+    if (Array.isArray(mathcPub)) {
+      try {
+        const items = await getItems(mathcPub, false);
 
         return createCompletionList(items);
       } catch { /**/ }
