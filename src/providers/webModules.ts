@@ -55,11 +55,11 @@ export const jsw: CompletionItemProvider = {
       } catch { /**/ }
     }
 
-    const mathcPub = /^(?:import.+['"])(public\/.*)/m.exec(prefix);
+    const matchPub = /^(?:import.+['"])(public\/.*)/m.exec(prefix);
 
-    if (Array.isArray(mathcPub)) {
+    if (Array.isArray(matchPub)) {
       try {
-        const items = await getItems(mathcPub, false);
+        const items = await getItems(matchPub, false);
 
         return createCompletionList(items);
       } catch { /**/ }
