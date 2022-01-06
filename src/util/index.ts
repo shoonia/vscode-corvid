@@ -8,11 +8,11 @@ import {
 } from 'vscode';
 
 export interface IDescribeCompletionItem {
-  name: string;
-  kind: number;
-  snippet?: string;
-  detail?: string;
-  docs?: string;
+  readonly name: string;
+  readonly kind: number;
+  readonly snippet?: string;
+  readonly detail?: string;
+  readonly docs?: string;
 }
 
 const JSW = /(.+)src\/backend\/(.+)\.jsw$/;

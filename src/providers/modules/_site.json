@@ -10,5 +10,17 @@
     "kind": 8,
     "snippet": "wixData from 'wix-data';",
     "docs": "The [wix-data](https://www.wix.com/velo/reference/wix-data) module contains functionality for working with data in collections."
+  },
+  {
+    "name": "backend/",
+    "kind": 18,
+    "snippet": "{ $1 } from 'backend$2';",
+    "docs": "Velo Web Modules"
+  },
+  {
+    "name": "public/",
+    "kind": 18,
+    "snippet": "{ $1 } from 'public$2';",
+    "docs": "Public Files"
   }
 ]
